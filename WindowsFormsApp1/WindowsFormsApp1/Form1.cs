@@ -53,10 +53,10 @@ namespace WindowsFormsApp1
         private void MaakKlant_Click(object sender, EventArgs e)
         {
             string voornaam = VoornaamtxtKlant.Text;
-            string achternaam = VoornaamtxtKlant.Text;
-            string verzekeringsid = VoornaamtxtKlant.Text;
-            string plaats = VoornaamtxtKlant.Text;
-            string adres = VoornaamtxtKlant.Text;
+            string achternaam = AchternaamtxtKlant.Text;
+            string verzekeringsid = VerzekeringsidtxtKlant.Text;
+            string plaats = PlaatstxtKlant.Text;
+            string adres = AdrestxtKlant.Text;
             
 
             if (verzekeringsid != null && voornaam != null && achternaam != null && plaats != null && adres != null)
@@ -69,12 +69,11 @@ namespace WindowsFormsApp1
 
                 con.klanten.Add(k);
                 con.SaveChanges();
-                KlantenGridView.DataSource = k.ToList();
+                KlantenGridView.DataSource = Klanten.klant.ToList();
 
                 voornaam = ""; achternaam = ""; verzekeringsid = ""; plaats = ""; adres = "";
                 k.Items.Add(voornaam);
             }
-
         }
 
         private void FilterKlant_Click(object sender, EventArgs e)
@@ -94,8 +93,31 @@ namespace WindowsFormsApp1
 
         private void MaakArts_Click(object sender, EventArgs e)
         {
+            //Onderstaande velden moeten nog aangemaakt worden in de designer
+            string Naam = NaamtxtArts.Text;
+            string Adres = AdrestxtArts.Text;
+            string Postcode = PostcodetxtArts.Text;
+            DateTime Einddatum = EinddatumtxtArts.Text;
 
+
+
+            if (Naam != null && Adres != null && Postcode != null && Einddatum != null)
+            {
+                Arts a = new Arts();
+                a.Naam = Naam;
+                a.Adres = Adres;
+                a.Postcode = Postcode;
+                a.Einddatum = Einddatum;
+
+                con.klanten.Add(k);
+                con.SaveChanges();
+                ArtsGridView.DataSource = Arts.arts.ToList();
+
+                Naam = ""; Adres = ""; Postcode = ""; Einddatum = "";
+                k.Items.Add(Naam);
+            }
         }
+        
 
         private void FilterArts_Click(object sender, EventArgs e)
         {
@@ -114,8 +136,26 @@ namespace WindowsFormsApp1
 
         private void MaakMedicatie_Click(object sender, EventArgs e)
         {
+            //Textvelden moeten nog toegevoegd worden in de designer
+            string MedicatieID = MedicatieIDtxt.Text;
+            string MedicatieNaam = NaamMedicatietxt.Text;
 
+
+            if (MedicatieID != null && MedicatieNaam != null)
+            {
+                Medicatie m = new Medicatie();
+                m.MedicatieID = Convert.ToInt32(MedicatieNaam);
+                m.MedicatieNaam = MedicatieNaam;
+
+                con.klanten.Add(m);
+                con.SaveChanges();
+                KlantenGridView.DataSource = Medicatie.medicatie.ToList();
+
+                MedicatieID = ""; MedicatieNaam = "";
+                m.Items.Add(MedicatieID);
+            }
         }
+                
 
         private void FilterMedicatie_Click(object sender, EventArgs e)
         {
