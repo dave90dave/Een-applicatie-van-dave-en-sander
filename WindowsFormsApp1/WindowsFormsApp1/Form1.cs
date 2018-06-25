@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
             string plaats = PlaatstxtKlant.Text;
             string adres = AdrestxtKlant.Text;
             
-
+            /*
             if (verzekeringsid != null && voornaam != null && achternaam != null && plaats != null && adres != null)
             {
                 Klanten k = new Klanten();
@@ -69,11 +69,11 @@ namespace WindowsFormsApp1
 
                 con.klanten.Add(k);
                 con.SaveChanges();
-                KlantenGridView.DataSource = Klanten.klant.ToList();
+                KlantenGridView.DataSource = Klanten.voornaam.ToList();
 
                 voornaam = ""; achternaam = ""; verzekeringsid = ""; plaats = ""; adres = "";
                 k.Items.Add(voornaam);
-            }
+            }*/
         }
 
         private void FilterKlant_Click(object sender, EventArgs e)
@@ -93,6 +93,7 @@ namespace WindowsFormsApp1
 
         private void MaakArts_Click(object sender, EventArgs e)
         {
+            /*
             //Onderstaande velden moeten nog aangemaakt worden in de designer
             string Naam = NaamtxtArts.Text;
             string Adres = AdrestxtArts.Text;
@@ -115,7 +116,7 @@ namespace WindowsFormsApp1
 
                 Naam = ""; Adres = ""; Postcode = ""; Einddatum = "";
                 k.Items.Add(Naam);
-            }
+            }*/
         }
         
 
@@ -135,7 +136,7 @@ namespace WindowsFormsApp1
         }
 
         private void MaakMedicatie_Click(object sender, EventArgs e)
-        {
+        {/*
             //Textvelden moeten nog toegevoegd worden in de designer
             string MedicatieID = MedicatieIDtxt.Text;
             string MedicatieNaam = NaamMedicatietxt.Text;
@@ -153,7 +154,7 @@ namespace WindowsFormsApp1
 
                 MedicatieID = ""; MedicatieNaam = "";
                 m.Items.Add(MedicatieID);
-            }
+            }*/
         }
                 
 
