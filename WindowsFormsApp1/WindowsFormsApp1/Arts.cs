@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
         public int ArtsID { get; set; }
         public string Naam { get; set; }
         public string Adres { get; set; }
-        public string Postcode { get; set; }
         public DateTime Einddatum { get; set; }
+        public List<Klanten> Klanten { get; set; }
     }
 }

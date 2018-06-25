@@ -12,7 +12,6 @@ namespace WindowsFormsApp1
     {
         [Key]
         public int KlantID { get; set; }
-        public int ArtsID { get; set; }
         public int VerzekeringsID { get; set; }
         public string Voornaam { get; set; }
         public string Achternaam { get; set; }

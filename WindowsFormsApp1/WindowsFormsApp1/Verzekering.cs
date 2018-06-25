@@ -13,6 +13,6 @@ namespace WindowsFormsApp1
         [Key]
         public string VerzekeringNaam { get; set; }
         public int VerzekeringID { get; set; }
-
+        public List<Klanten> Klanten { get; set; }
     }
 }
