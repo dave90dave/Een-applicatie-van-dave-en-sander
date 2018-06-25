@@ -57,3 +57,12 @@ C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\Wi
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CopyComplete
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.lol.resources

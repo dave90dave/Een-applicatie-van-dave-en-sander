@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
              con.SaveChanges();
             KlantenGridView.DataSource = con.klanten.Select(p => new {
                 KlantID = p.KlantID,
-                ArtsID = p.ArtsID,
                 VerzekeringsID = p.VerzekeringsID,
                 Voornaam = p.Voornaam,
                 Achternaam = p.Achternaam,
@@ -40,7 +39,6 @@ namespace WindowsFormsApp1
             }).OrderBy(p => p.Achternaam).ToList();
 
             KlantenGridView.Columns["KlantID"].Visible = false;
-            KlantenGridView.Columns["ArtsID"].Visible = false;
             KlantenGridView.Columns["VerzekeringsID"].Visible = false;
         }
 
@@ -171,6 +169,15 @@ namespace WindowsFormsApp1
         private void VerwijderMedicatie_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var query = from Klanten in con.klanten
+                        where Klanten.Voornaam.Contains(textBox1.Text)
+                        select Klanten;
+
+            KlantenGridView.DataSource = query.ToList();
         }
     }
 }
