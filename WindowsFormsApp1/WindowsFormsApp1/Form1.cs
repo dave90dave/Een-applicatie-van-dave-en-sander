@@ -32,6 +32,21 @@ namespace WindowsFormsApp1
             }).OrderBy(p => p.Achternaam).ToList();
             KlantenGridView.Columns["KlantID"].Visible = false;
             KlantenGridView.Columns["VerzekeringsID"].Visible = false;
+
+            ArtsenGridview.DataSource = con.arts.Select(p => new {
+                ArtsID = p.ArtsID,
+                Naam = p.Naam,
+                Adres = p.Adres,
+                Einddatum = p.Einddatum,
+            }).OrderBy(p => p.Naam).ToList();
+            ArtsenGridview.Columns["ArtsID"].Visible = false;
+
+            MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+                MedicatieID = p.MedicatieID,
+                MedicatieNaam = p.MedicatieNaam,
+                KlantID = p.KlantID,
+            }).OrderBy(p => p.MedicatieNaam).ToList();
+            MedicatieGridView.Columns["MedicatieID"].Visible = false;
         }
 
 
@@ -66,11 +81,6 @@ namespace WindowsFormsApp1
 
             KlantenGridView.Columns["KlantID"].Visible = false;
             KlantenGridView.Columns["VerzekeringsID"].Visible = false;
-        }
-
-        private void FilterKlant_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BewerkKlant_Click(object sender, EventArgs e)
@@ -172,6 +182,11 @@ namespace WindowsFormsApp1
                         select Klanten;
 
             KlantenGridView.DataSource = query.ToList();
+        }
+
+        private void MaakKlant_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
