@@ -57,30 +57,7 @@ namespace WindowsFormsApp1
 
         private void MaakKlant_Click(object sender, EventArgs e)
         {
-            string voornaam = VoornaamtxtKlant.Text;
-            string achternaam = AchternaamtxtKlant.Text;
-            string verzekeringsid = VerzekeringsidtxtKlant.Text;
-            string plaats = PlaatstxtKlant.Text;
-            string adres = AdrestxtKlant.Text;
-
-            Klanten k = new Klanten();
-            k.Voornaam = voornaam;
-            k.Achternaam = achternaam;
-            k.Plaats = plaats;
-            k.Adres = adres;
-            con.klanten.Add(k);
-            con.SaveChanges();
-            KlantenGridView.DataSource = con.klanten.Select(p => new {
-                KlantID = p.KlantID,
-                VerzekeringsID = p.VerzekeringsID,
-                Voornaam = p.Voornaam,
-                Achternaam = p.Achternaam,
-                Adres = p.Adres,
-                Plaats = p.Plaats
-            }).OrderBy(p => p.Achternaam).ToList();
-
-            KlantenGridView.Columns["KlantID"].Visible = false;
-            KlantenGridView.Columns["VerzekeringsID"].Visible = false;
+           //moet nog worden verwijderd
         }
 
         private void BewerkKlant_Click(object sender, EventArgs e)
@@ -185,6 +162,94 @@ namespace WindowsFormsApp1
         }
 
         private void MaakKlant_Click_1(object sender, EventArgs e)
+        {
+            string voornaam = VoornaamtxtKlant.Text;
+            string achternaam = AchternaamtxtKlant.Text;
+            string verzekeringsid = VerzekeringsidtxtKlant.Text;
+            string plaats = PlaatstxtKlant.Text;
+            string adres = AdrestxtKlant.Text;
+
+            Klanten k = new Klanten();
+            k.Voornaam = voornaam;
+            k.Achternaam = achternaam;
+            k.Plaats = plaats;
+            k.Adres = adres;
+            con.klanten.Add(k);
+            con.SaveChanges();
+            KlantenGridView.DataSource = con.klanten.Select(p => new {
+                KlantID = p.KlantID,
+                VerzekeringsID = p.VerzekeringsID,
+                Voornaam = p.Voornaam,
+                Achternaam = p.Achternaam,
+                Adres = p.Adres,
+                Plaats = p.Plaats
+            }).OrderBy(p => p.Achternaam).ToList();
+
+            KlantenGridView.Columns["KlantID"].Visible = false;
+            KlantenGridView.Columns["VerzekeringsID"].Visible = false;
+        }
+
+        private void SearchArtsen_TextChanged(object sender, EventArgs e)
+        {
+            var query = from arts in con.arts
+                        where arts.Naam.Contains(SearchArtsen.Text)
+                        select arts;
+
+            ArtsenGridview.DataSource = query.ToList();
+        }
+
+        private void MaakArtsbtn_Click(object sender, EventArgs e)
+        {
+            string naam = NaamArtstxt.Text;
+            string adres = AdresArtstxt.Text;
+            DateTime einddatum = Convert.ToDateTime(EinddatumArtstxt.Text);
+
+            Arts k = new Arts();
+            k.Naam = naam;
+            k.Adres = adres;
+            k.Einddatum = einddatum;
+            con.arts.Add(k);
+            con.SaveChanges();
+            ArtsenGridview.DataSource = con.arts.Select(p => new {
+                ArtsID = p.ArtsID,
+                Naam = p.Naam,
+                Adres = p.Adres,
+                Einddatum = p.Einddatum
+              //  Achternaam = p.Einddatum,
+            }).OrderBy(p => p.Naam).ToList();
+
+            //ArtsenGridview.Columns["Naam"].Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string medicatienaam = MedicatieNaamtxt.Text;
+            int klantid = Convert.ToInt32(MedicatieKlantid.Text);
+
+            Medicatie k = new Medicatie();
+            k.MedicatieNaam = medicatienaam;
+            k.KlantID = klantid;
+            con.medicatie.Add(k);
+            con.SaveChanges();
+            MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+                MedicatieNaam = p.MedicatieNaam,
+                KlantID = p.KlantID,
+            }).OrderBy(p => p.MedicatieNaam).ToList();
+
+            //MedicatieGridView.Columns["MedicatieNaam"].Visible = false;
+
+        }
+
+        private void SearchMedicatie_TextChanged(object sender, EventArgs e)
+        {
+            var query = from Medicatie in con.medicatie
+                        where Medicatie.MedicatieNaam.Contains(SearchMedicatie.Text)
+                        select Medicatie;
+
+            MedicatieGridView.DataSource = query.ToList();
+        }
+
+        private void ArtsenGridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
