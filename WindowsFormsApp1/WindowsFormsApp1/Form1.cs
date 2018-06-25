@@ -22,13 +22,6 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Klanten k = new Klanten();
-            //k.Voornaam = "Sander";
-            //k.Achternaam = "Baak";
-            //k.Plaats = "Alkmaar";
-            //k.Adres = "Mogool 10";
-            con.klanten.Add(k);
-             con.SaveChanges();
             KlantenGridView.DataSource = con.klanten.Select(p => new {
                 KlantID = p.KlantID,
                 VerzekeringsID = p.VerzekeringsID,
@@ -37,7 +30,6 @@ namespace WindowsFormsApp1
                 Adres = p.Adres,
                 Plaats = p.Plaats
             }).OrderBy(p => p.Achternaam).ToList();
-
             KlantenGridView.Columns["KlantID"].Visible = false;
             KlantenGridView.Columns["VerzekeringsID"].Visible = false;
         }
@@ -55,23 +47,25 @@ namespace WindowsFormsApp1
             string verzekeringsid = VerzekeringsidtxtKlant.Text;
             string plaats = PlaatstxtKlant.Text;
             string adres = AdrestxtKlant.Text;
-            
-            /*
-            if (verzekeringsid != null && voornaam != null && achternaam != null && plaats != null && adres != null)
-            {
-                Klanten k = new Klanten();
-                k.Voornaam = voornaam;
-                k.Achternaam = achternaam;
-                k.Adres = adres;
-                k.Plaats = plaats;
 
-                con.klanten.Add(k);
-                con.SaveChanges();
-                KlantenGridView.DataSource = Klanten.voornaam.ToList();
+            Klanten k = new Klanten();
+            k.Voornaam = voornaam;
+            k.Achternaam = achternaam;
+            k.Plaats = plaats;
+            k.Adres = adres;
+            con.klanten.Add(k);
+            con.SaveChanges();
+            KlantenGridView.DataSource = con.klanten.Select(p => new {
+                KlantID = p.KlantID,
+                VerzekeringsID = p.VerzekeringsID,
+                Voornaam = p.Voornaam,
+                Achternaam = p.Achternaam,
+                Adres = p.Adres,
+                Plaats = p.Plaats
+            }).OrderBy(p => p.Achternaam).ToList();
 
-                voornaam = ""; achternaam = ""; verzekeringsid = ""; plaats = ""; adres = "";
-                k.Items.Add(voornaam);
-            }*/
+            KlantenGridView.Columns["KlantID"].Visible = false;
+            KlantenGridView.Columns["VerzekeringsID"].Visible = false;
         }
 
         private void FilterKlant_Click(object sender, EventArgs e)
