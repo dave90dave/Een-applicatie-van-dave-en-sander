@@ -39,12 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BewerkArts = new System.Windows.Forms.Button();
             this.VerwijderArts = new System.Windows.Forms.Button();
-            this.FilterArts = new System.Windows.Forms.Button();
-            this.MaakArts = new System.Windows.Forms.Button();
             this.BewerkMedicatie = new System.Windows.Forms.Button();
             this.VerwijderMedicatie = new System.Windows.Forms.Button();
-            this.FilterMedicatie = new System.Windows.Forms.Button();
-            this.MaakMedicatie = new System.Windows.Forms.Button();
             this.MaakMedicatiebtn = new System.Windows.Forms.TabControl();
             this.Klantentab = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -76,6 +72,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.MedicatieKlantid = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArtsenGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MedicatieGridView)).BeginInit();
@@ -83,6 +88,15 @@
             this.Klantentab.SuspendLayout();
             this.Artsentab.SuspendLayout();
             this.Medicatietab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // KlantenGridView
@@ -128,7 +142,7 @@
             // 
             // VerwijderKlant
             // 
-            this.VerwijderKlant.Location = new System.Drawing.Point(380, 337);
+            this.VerwijderKlant.Location = new System.Drawing.Point(115, 33);
             this.VerwijderKlant.Margin = new System.Windows.Forms.Padding(4);
             this.VerwijderKlant.Name = "VerwijderKlant";
             this.VerwijderKlant.Size = new System.Drawing.Size(100, 28);
@@ -139,7 +153,7 @@
             // 
             // BewerkKlant
             // 
-            this.BewerkKlant.Location = new System.Drawing.Point(272, 337);
+            this.BewerkKlant.Location = new System.Drawing.Point(7, 33);
             this.BewerkKlant.Margin = new System.Windows.Forms.Padding(4);
             this.BewerkKlant.Name = "BewerkKlant";
             this.BewerkKlant.Size = new System.Drawing.Size(100, 28);
@@ -186,7 +200,7 @@
             // 
             // BewerkArts
             // 
-            this.BewerkArts.Location = new System.Drawing.Point(224, 361);
+            this.BewerkArts.Location = new System.Drawing.Point(7, 32);
             this.BewerkArts.Margin = new System.Windows.Forms.Padding(4);
             this.BewerkArts.Name = "BewerkArts";
             this.BewerkArts.Size = new System.Drawing.Size(100, 28);
@@ -197,7 +211,7 @@
             // 
             // VerwijderArts
             // 
-            this.VerwijderArts.Location = new System.Drawing.Point(332, 361);
+            this.VerwijderArts.Location = new System.Drawing.Point(115, 32);
             this.VerwijderArts.Margin = new System.Windows.Forms.Padding(4);
             this.VerwijderArts.Name = "VerwijderArts";
             this.VerwijderArts.Size = new System.Drawing.Size(100, 28);
@@ -206,31 +220,9 @@
             this.VerwijderArts.UseVisualStyleBackColor = true;
             this.VerwijderArts.Click += new System.EventHandler(this.VerwijderArts_Click);
             // 
-            // FilterArts
-            // 
-            this.FilterArts.Location = new System.Drawing.Point(116, 361);
-            this.FilterArts.Margin = new System.Windows.Forms.Padding(4);
-            this.FilterArts.Name = "FilterArts";
-            this.FilterArts.Size = new System.Drawing.Size(100, 28);
-            this.FilterArts.TabIndex = 11;
-            this.FilterArts.Text = "Filter";
-            this.FilterArts.UseVisualStyleBackColor = true;
-            this.FilterArts.Click += new System.EventHandler(this.FilterArts_Click);
-            // 
-            // MaakArts
-            // 
-            this.MaakArts.Location = new System.Drawing.Point(8, 361);
-            this.MaakArts.Margin = new System.Windows.Forms.Padding(4);
-            this.MaakArts.Name = "MaakArts";
-            this.MaakArts.Size = new System.Drawing.Size(100, 28);
-            this.MaakArts.TabIndex = 10;
-            this.MaakArts.Text = "Add";
-            this.MaakArts.UseVisualStyleBackColor = true;
-            this.MaakArts.Click += new System.EventHandler(this.MaakArts_Click);
-            // 
             // BewerkMedicatie
             // 
-            this.BewerkMedicatie.Location = new System.Drawing.Point(224, 345);
+            this.BewerkMedicatie.Location = new System.Drawing.Point(7, 30);
             this.BewerkMedicatie.Margin = new System.Windows.Forms.Padding(4);
             this.BewerkMedicatie.Name = "BewerkMedicatie";
             this.BewerkMedicatie.Size = new System.Drawing.Size(100, 28);
@@ -241,7 +233,7 @@
             // 
             // VerwijderMedicatie
             // 
-            this.VerwijderMedicatie.Location = new System.Drawing.Point(332, 345);
+            this.VerwijderMedicatie.Location = new System.Drawing.Point(115, 30);
             this.VerwijderMedicatie.Margin = new System.Windows.Forms.Padding(4);
             this.VerwijderMedicatie.Name = "VerwijderMedicatie";
             this.VerwijderMedicatie.Size = new System.Drawing.Size(100, 28);
@@ -250,70 +242,38 @@
             this.VerwijderMedicatie.UseVisualStyleBackColor = true;
             this.VerwijderMedicatie.Click += new System.EventHandler(this.VerwijderMedicatie_Click);
             // 
-            // FilterMedicatie
-            // 
-            this.FilterMedicatie.Location = new System.Drawing.Point(116, 345);
-            this.FilterMedicatie.Margin = new System.Windows.Forms.Padding(4);
-            this.FilterMedicatie.Name = "FilterMedicatie";
-            this.FilterMedicatie.Size = new System.Drawing.Size(100, 28);
-            this.FilterMedicatie.TabIndex = 15;
-            this.FilterMedicatie.Text = "Filter";
-            this.FilterMedicatie.UseVisualStyleBackColor = true;
-            this.FilterMedicatie.Click += new System.EventHandler(this.FilterMedicatie_Click);
-            // 
-            // MaakMedicatie
-            // 
-            this.MaakMedicatie.Location = new System.Drawing.Point(8, 345);
-            this.MaakMedicatie.Margin = new System.Windows.Forms.Padding(4);
-            this.MaakMedicatie.Name = "MaakMedicatie";
-            this.MaakMedicatie.Size = new System.Drawing.Size(100, 28);
-            this.MaakMedicatie.TabIndex = 14;
-            this.MaakMedicatie.Text = "Add";
-            this.MaakMedicatie.UseVisualStyleBackColor = true;
-            this.MaakMedicatie.Click += new System.EventHandler(this.MaakMedicatie_Click);
-            // 
             // MaakMedicatiebtn
             // 
             this.MaakMedicatiebtn.Controls.Add(this.Klantentab);
             this.MaakMedicatiebtn.Controls.Add(this.Artsentab);
             this.MaakMedicatiebtn.Controls.Add(this.Medicatietab);
-            this.MaakMedicatiebtn.Location = new System.Drawing.Point(16, 15);
+            this.MaakMedicatiebtn.Location = new System.Drawing.Point(4, 3);
             this.MaakMedicatiebtn.Margin = new System.Windows.Forms.Padding(4);
             this.MaakMedicatiebtn.Name = "MaakMedicatiebtn";
             this.MaakMedicatiebtn.SelectedIndex = 0;
-            this.MaakMedicatiebtn.Size = new System.Drawing.Size(1052, 880);
+            this.MaakMedicatiebtn.Size = new System.Drawing.Size(1016, 462);
             this.MaakMedicatiebtn.TabIndex = 30;
             // 
             // Klantentab
             // 
-            this.Klantentab.Controls.Add(this.label8);
-            this.Klantentab.Controls.Add(this.label7);
-            this.Klantentab.Controls.Add(this.label6);
-            this.Klantentab.Controls.Add(this.label5);
-            this.Klantentab.Controls.Add(this.AdrestxtKlant);
-            this.Klantentab.Controls.Add(this.MaakKlant);
-            this.Klantentab.Controls.Add(this.PlaatstxtKlant);
-            this.Klantentab.Controls.Add(this.AchternaamtxtKlant);
-            this.Klantentab.Controls.Add(this.VerzekeringsidtxtKlant);
-            this.Klantentab.Controls.Add(this.VoornaamtxtKlant);
-            this.Klantentab.Controls.Add(this.label4);
-            this.Klantentab.Controls.Add(this.textBox1);
+            this.Klantentab.Controls.Add(this.groupBox7);
+            this.Klantentab.Controls.Add(this.groupBox6);
+            this.Klantentab.Controls.Add(this.groupBox1);
             this.Klantentab.Controls.Add(this.KlantenGridView);
             this.Klantentab.Controls.Add(this.label1);
-            this.Klantentab.Controls.Add(this.VerwijderKlant);
-            this.Klantentab.Controls.Add(this.BewerkKlant);
             this.Klantentab.Location = new System.Drawing.Point(4, 25);
             this.Klantentab.Margin = new System.Windows.Forms.Padding(4);
             this.Klantentab.Name = "Klantentab";
             this.Klantentab.Padding = new System.Windows.Forms.Padding(4);
-            this.Klantentab.Size = new System.Drawing.Size(1044, 851);
+            this.Klantentab.Size = new System.Drawing.Size(980, 433);
             this.Klantentab.TabIndex = 0;
             this.Klantentab.Text = "Klanten";
             this.Klantentab.UseVisualStyleBackColor = true;
+            this.Klantentab.Click += new System.EventHandler(this.Klantentab_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 337);
+            this.textBox1.Location = new System.Drawing.Point(10, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(227, 22);
             this.textBox1.TabIndex = 30;
@@ -321,48 +281,32 @@
             // 
             // Artsentab
             // 
-            this.Artsentab.Controls.Add(this.EinddatumArtstxt);
-            this.Artsentab.Controls.Add(this.label13);
-            this.Artsentab.Controls.Add(this.label12);
-            this.Artsentab.Controls.Add(this.label9);
-            this.Artsentab.Controls.Add(this.AdresArtstxt);
-            this.Artsentab.Controls.Add(this.NaamArtstxt);
-            this.Artsentab.Controls.Add(this.MaakArtsbtn);
-            this.Artsentab.Controls.Add(this.SearchArtsen);
+            this.Artsentab.Controls.Add(this.groupBox8);
+            this.Artsentab.Controls.Add(this.groupBox5);
+            this.Artsentab.Controls.Add(this.groupBox2);
             this.Artsentab.Controls.Add(this.ArtsenGridview);
-            this.Artsentab.Controls.Add(this.MaakArts);
             this.Artsentab.Controls.Add(this.label2);
-            this.Artsentab.Controls.Add(this.FilterArts);
-            this.Artsentab.Controls.Add(this.VerwijderArts);
-            this.Artsentab.Controls.Add(this.BewerkArts);
             this.Artsentab.Location = new System.Drawing.Point(4, 25);
             this.Artsentab.Margin = new System.Windows.Forms.Padding(4);
             this.Artsentab.Name = "Artsentab";
             this.Artsentab.Padding = new System.Windows.Forms.Padding(4);
-            this.Artsentab.Size = new System.Drawing.Size(1044, 851);
+            this.Artsentab.Size = new System.Drawing.Size(1008, 433);
             this.Artsentab.TabIndex = 1;
             this.Artsentab.Text = "Artsen";
             this.Artsentab.UseVisualStyleBackColor = true;
             // 
             // Medicatietab
             // 
-            this.Medicatietab.Controls.Add(this.label11);
-            this.Medicatietab.Controls.Add(this.MedicatieKlantid);
-            this.Medicatietab.Controls.Add(this.label10);
-            this.Medicatietab.Controls.Add(this.MedicatieNaamtxt);
-            this.Medicatietab.Controls.Add(this.button2);
-            this.Medicatietab.Controls.Add(this.SearchMedicatie);
+            this.Medicatietab.Controls.Add(this.groupBox9);
+            this.Medicatietab.Controls.Add(this.groupBox4);
+            this.Medicatietab.Controls.Add(this.groupBox3);
             this.Medicatietab.Controls.Add(this.MedicatieGridView);
-            this.Medicatietab.Controls.Add(this.BewerkMedicatie);
             this.Medicatietab.Controls.Add(this.label3);
-            this.Medicatietab.Controls.Add(this.VerwijderMedicatie);
-            this.Medicatietab.Controls.Add(this.MaakMedicatie);
-            this.Medicatietab.Controls.Add(this.FilterMedicatie);
             this.Medicatietab.Location = new System.Drawing.Point(4, 25);
             this.Medicatietab.Margin = new System.Windows.Forms.Padding(4);
             this.Medicatietab.Name = "Medicatietab";
             this.Medicatietab.Padding = new System.Windows.Forms.Padding(4);
-            this.Medicatietab.Size = new System.Drawing.Size(1044, 851);
+            this.Medicatietab.Size = new System.Drawing.Size(980, 433);
             this.Medicatietab.TabIndex = 2;
             this.Medicatietab.Text = "Medicatie";
             this.Medicatietab.UseVisualStyleBackColor = true;
@@ -376,7 +320,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(687, 125);
+            this.label8.Location = new System.Drawing.Point(6, 61);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 17);
@@ -386,7 +330,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(689, 221);
+            this.label7.Location = new System.Drawing.Point(8, 157);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 17);
@@ -396,7 +340,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(687, 189);
+            this.label6.Location = new System.Drawing.Point(6, 125);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 17);
@@ -406,7 +350,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(687, 157);
+            this.label5.Location = new System.Drawing.Point(6, 93);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 17);
@@ -415,7 +359,7 @@
             // 
             // AdrestxtKlant
             // 
-            this.AdrestxtKlant.Location = new System.Drawing.Point(796, 217);
+            this.AdrestxtKlant.Location = new System.Drawing.Point(115, 153);
             this.AdrestxtKlant.Margin = new System.Windows.Forms.Padding(4);
             this.AdrestxtKlant.Name = "AdrestxtKlant";
             this.AdrestxtKlant.Size = new System.Drawing.Size(132, 22);
@@ -423,7 +367,7 @@
             // 
             // MaakKlant
             // 
-            this.MaakKlant.Location = new System.Drawing.Point(692, 264);
+            this.MaakKlant.Location = new System.Drawing.Point(11, 200);
             this.MaakKlant.Margin = new System.Windows.Forms.Padding(4);
             this.MaakKlant.Name = "MaakKlant";
             this.MaakKlant.Size = new System.Drawing.Size(100, 28);
@@ -434,7 +378,7 @@
             // 
             // PlaatstxtKlant
             // 
-            this.PlaatstxtKlant.Location = new System.Drawing.Point(796, 185);
+            this.PlaatstxtKlant.Location = new System.Drawing.Point(115, 121);
             this.PlaatstxtKlant.Margin = new System.Windows.Forms.Padding(4);
             this.PlaatstxtKlant.Name = "PlaatstxtKlant";
             this.PlaatstxtKlant.Size = new System.Drawing.Size(132, 22);
@@ -442,7 +386,7 @@
             // 
             // AchternaamtxtKlant
             // 
-            this.AchternaamtxtKlant.Location = new System.Drawing.Point(796, 153);
+            this.AchternaamtxtKlant.Location = new System.Drawing.Point(115, 89);
             this.AchternaamtxtKlant.Margin = new System.Windows.Forms.Padding(4);
             this.AchternaamtxtKlant.Name = "AchternaamtxtKlant";
             this.AchternaamtxtKlant.Size = new System.Drawing.Size(132, 22);
@@ -450,7 +394,7 @@
             // 
             // VerzekeringsidtxtKlant
             // 
-            this.VerzekeringsidtxtKlant.Location = new System.Drawing.Point(796, 89);
+            this.VerzekeringsidtxtKlant.Location = new System.Drawing.Point(115, 25);
             this.VerzekeringsidtxtKlant.Margin = new System.Windows.Forms.Padding(4);
             this.VerzekeringsidtxtKlant.Name = "VerzekeringsidtxtKlant";
             this.VerzekeringsidtxtKlant.Size = new System.Drawing.Size(132, 22);
@@ -458,7 +402,7 @@
             // 
             // VoornaamtxtKlant
             // 
-            this.VoornaamtxtKlant.Location = new System.Drawing.Point(796, 121);
+            this.VoornaamtxtKlant.Location = new System.Drawing.Point(115, 57);
             this.VoornaamtxtKlant.Margin = new System.Windows.Forms.Padding(4);
             this.VoornaamtxtKlant.Name = "VoornaamtxtKlant";
             this.VoornaamtxtKlant.Size = new System.Drawing.Size(132, 22);
@@ -467,7 +411,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(688, 93);
+            this.label4.Location = new System.Drawing.Point(7, 29);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 17);
@@ -476,7 +420,7 @@
             // 
             // SearchArtsen
             // 
-            this.SearchArtsen.Location = new System.Drawing.Point(32, 417);
+            this.SearchArtsen.Location = new System.Drawing.Point(11, 35);
             this.SearchArtsen.Name = "SearchArtsen";
             this.SearchArtsen.Size = new System.Drawing.Size(227, 22);
             this.SearchArtsen.TabIndex = 31;
@@ -484,7 +428,7 @@
             // 
             // SearchMedicatie
             // 
-            this.SearchMedicatie.Location = new System.Drawing.Point(37, 404);
+            this.SearchMedicatie.Location = new System.Drawing.Point(6, 36);
             this.SearchMedicatie.Name = "SearchMedicatie";
             this.SearchMedicatie.Size = new System.Drawing.Size(227, 22);
             this.SearchMedicatie.TabIndex = 31;
@@ -492,7 +436,7 @@
             // 
             // MaakArtsbtn
             // 
-            this.MaakArtsbtn.Location = new System.Drawing.Point(740, 234);
+            this.MaakArtsbtn.Location = new System.Drawing.Point(55, 183);
             this.MaakArtsbtn.Margin = new System.Windows.Forms.Padding(4);
             this.MaakArtsbtn.Name = "MaakArtsbtn";
             this.MaakArtsbtn.Size = new System.Drawing.Size(100, 28);
@@ -503,7 +447,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(732, 194);
+            this.button2.Location = new System.Drawing.Point(56, 82);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -514,14 +458,14 @@
             // 
             // NaamArtstxt
             // 
-            this.NaamArtstxt.Location = new System.Drawing.Point(805, 79);
+            this.NaamArtstxt.Location = new System.Drawing.Point(120, 28);
             this.NaamArtstxt.Name = "NaamArtstxt";
             this.NaamArtstxt.Size = new System.Drawing.Size(100, 22);
             this.NaamArtstxt.TabIndex = 43;
             // 
             // AdresArtstxt
             // 
-            this.AdresArtstxt.Location = new System.Drawing.Point(805, 118);
+            this.AdresArtstxt.Location = new System.Drawing.Point(120, 67);
             this.AdresArtstxt.Name = "AdresArtstxt";
             this.AdresArtstxt.Size = new System.Drawing.Size(100, 22);
             this.AdresArtstxt.TabIndex = 46;
@@ -529,7 +473,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(702, 83);
+            this.label9.Location = new System.Drawing.Point(17, 32);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 17);
             this.label9.TabIndex = 48;
@@ -538,7 +482,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(705, 118);
+            this.label12.Location = new System.Drawing.Point(20, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 17);
             this.label12.TabIndex = 51;
@@ -547,7 +491,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(708, 158);
+            this.label13.Location = new System.Drawing.Point(23, 107);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 17);
             this.label13.TabIndex = 52;
@@ -555,14 +499,14 @@
             // 
             // EinddatumArtstxt
             // 
-            this.EinddatumArtstxt.Location = new System.Drawing.Point(805, 158);
+            this.EinddatumArtstxt.Location = new System.Drawing.Point(120, 107);
             this.EinddatumArtstxt.Name = "EinddatumArtstxt";
             this.EinddatumArtstxt.Size = new System.Drawing.Size(200, 22);
             this.EinddatumArtstxt.TabIndex = 53;
             // 
             // MedicatieNaamtxt
             // 
-            this.MedicatieNaamtxt.Location = new System.Drawing.Point(807, 130);
+            this.MedicatieNaamtxt.Location = new System.Drawing.Point(131, 18);
             this.MedicatieNaamtxt.Name = "MedicatieNaamtxt";
             this.MedicatieNaamtxt.Size = new System.Drawing.Size(100, 22);
             this.MedicatieNaamtxt.TabIndex = 43;
@@ -570,7 +514,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(682, 130);
+            this.label10.Location = new System.Drawing.Point(6, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 17);
             this.label10.TabIndex = 44;
@@ -578,7 +522,7 @@
             // 
             // MedicatieKlantid
             // 
-            this.MedicatieKlantid.Location = new System.Drawing.Point(807, 165);
+            this.MedicatieKlantid.Location = new System.Drawing.Point(131, 53);
             this.MedicatieKlantid.Name = "MedicatieKlantid";
             this.MedicatieKlantid.Size = new System.Drawing.Size(100, 22);
             this.MedicatieKlantid.TabIndex = 45;
@@ -586,17 +530,130 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(685, 165);
+            this.label11.Location = new System.Drawing.Point(9, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 17);
             this.label11.TabIndex = 46;
             this.label11.Text = "Klant ID";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 337);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(244, 82);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Zoeken";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.SearchArtsen);
+            this.groupBox2.Location = new System.Drawing.Point(7, 341);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(244, 82);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Zoeken";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.SearchMedicatie);
+            this.groupBox3.Location = new System.Drawing.Point(7, 344);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(244, 82);
+            this.groupBox3.TabIndex = 53;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Zoeken";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.BewerkMedicatie);
+            this.groupBox4.Controls.Add(this.VerwijderMedicatie);
+            this.groupBox4.Location = new System.Drawing.Point(456, 344);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(219, 82);
+            this.groupBox4.TabIndex = 54;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Acties";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.BewerkArts);
+            this.groupBox5.Controls.Add(this.VerwijderArts);
+            this.groupBox5.Location = new System.Drawing.Point(449, 341);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(222, 82);
+            this.groupBox5.TabIndex = 55;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Acties";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.BewerkKlant);
+            this.groupBox6.Controls.Add(this.VerwijderKlant);
+            this.groupBox6.Location = new System.Drawing.Point(452, 333);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(223, 86);
+            this.groupBox6.TabIndex = 55;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Acties";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Controls.Add(this.VoornaamtxtKlant);
+            this.groupBox7.Controls.Add(this.VerzekeringsidtxtKlant);
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.AchternaamtxtKlant);
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.PlaatstxtKlant);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Controls.Add(this.MaakKlant);
+            this.groupBox7.Controls.Add(this.label5);
+            this.groupBox7.Controls.Add(this.AdrestxtKlant);
+            this.groupBox7.Location = new System.Drawing.Point(698, 48);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(293, 278);
+            this.groupBox7.TabIndex = 56;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Maken";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label9);
+            this.groupBox8.Controls.Add(this.MaakArtsbtn);
+            this.groupBox8.Controls.Add(this.NaamArtstxt);
+            this.groupBox8.Controls.Add(this.EinddatumArtstxt);
+            this.groupBox8.Controls.Add(this.AdresArtstxt);
+            this.groupBox8.Controls.Add(this.label13);
+            this.groupBox8.Controls.Add(this.label12);
+            this.groupBox8.Location = new System.Drawing.Point(678, 41);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(332, 224);
+            this.groupBox8.TabIndex = 57;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Maken";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label10);
+            this.groupBox9.Controls.Add(this.button2);
+            this.groupBox9.Controls.Add(this.MedicatieNaamtxt);
+            this.groupBox9.Controls.Add(this.label11);
+            this.groupBox9.Controls.Add(this.MedicatieKlantid);
+            this.groupBox9.Location = new System.Drawing.Point(682, 43);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(284, 133);
+            this.groupBox9.TabIndex = 57;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Maken";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 765);
+            this.ClientSize = new System.Drawing.Size(1023, 467);
             this.Controls.Add(this.MaakMedicatiebtn);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -612,6 +669,21 @@
             this.Artsentab.PerformLayout();
             this.Medicatietab.ResumeLayout(false);
             this.Medicatietab.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -628,12 +700,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BewerkArts;
         private System.Windows.Forms.Button VerwijderArts;
-        private System.Windows.Forms.Button FilterArts;
-        private System.Windows.Forms.Button MaakArts;
         private System.Windows.Forms.Button BewerkMedicatie;
         private System.Windows.Forms.Button VerwijderMedicatie;
-        private System.Windows.Forms.Button FilterMedicatie;
-        private System.Windows.Forms.Button MaakMedicatie;
         private System.Windows.Forms.TabControl MaakMedicatiebtn;
         private System.Windows.Forms.TabPage Klantentab;
         private System.Windows.Forms.TabPage Artsentab;
@@ -665,6 +733,15 @@
         private System.Windows.Forms.TextBox MedicatieNaamtxt;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox MedicatieKlantid;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
 
