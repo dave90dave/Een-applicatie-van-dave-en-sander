@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.EntityState;
+/*using System.Data.EntityState;*/
 
 namespace WindowsFormsApp1
 {
@@ -78,9 +78,11 @@ namespace WindowsFormsApp1
             con.klanten(klantid).State = EntityState.Deleted;
             con.SaveChanges();*/
 
+            /*
             var delklant = new Klanten { KlantID = klantid };
             con.Entry(delklant).State = EntityState.Deleted;
             con.SaveChanges();
+            */
 
         }
 
@@ -168,8 +170,9 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            //Dit stukje code kunnen we misschien hergebruiken voor het verwijderen van records
             var query = from Klanten in con.klanten
-                        where Klanten.Voornaam.Contains(textBox1.Text)
+                        where Klanten.Voornaam.Contains(SrcKlantentxt.Text)
                         select Klanten;
 
             KlantenGridView.DataSource = query.ToList();
@@ -271,6 +274,17 @@ namespace WindowsFormsApp1
         private void Klantentab_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SelectAllKlantenbtn_Click(object sender, EventArgs e)
+        {
+            //deze moet nog een functie krijgen waarmee we alle resultaten kunnen tonen na het zoeken
+                        /*var query = from Klanten in con.klanten
+                        where Klanten.Voornaam.Contains(SrcKlantentxt.Text)
+                        select Klanten;*/
+            var query = Klanten.KlantID.SqlQuery("SELECT * FROM Klanten").ToList();
+            SrcKlantentxt.Text = "";
+            KlantenGridView.DataSource = query.ToList();
         }
     }
 }
