@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.EntityState;
 
 namespace WindowsFormsApp1
 {
@@ -67,6 +68,19 @@ namespace WindowsFormsApp1
 
         private void VerwijderKlant_Click(object sender, EventArgs e)
         {
+
+            int klantid = Convert.ToInt32(klantidtxtKlant.Text);
+
+
+            /*Klanten k = new Klanten();
+            k.KlantID = klantid;
+            con.klanten.Remove(k);
+            con.klanten(klantid).State = EntityState.Deleted;
+            con.SaveChanges();*/
+
+            var delklant = new Klanten { KlantID = klantid };
+            con.Entry(delklant).State = EntityState.Deleted;
+            con.SaveChanges();
 
         }
 
