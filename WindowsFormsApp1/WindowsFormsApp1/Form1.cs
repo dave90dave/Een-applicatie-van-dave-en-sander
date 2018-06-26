@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-            database con = new database();
+        database con = new database();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
                 Adres = p.Adres,
                 Plaats = p.Plaats
             }).OrderBy(p => p.Achternaam).ToList();
-            KlantenGridView.Columns["VerzekeringsID"].Visible = false;
+            //KlantenGridView.Columns["VerzekeringsID"].Visible = false;
 
             ArtsenGridview.DataSource = con.arts.Select(p => new {
                 ArtsID = p.ArtsID,
@@ -39,14 +39,14 @@ namespace WindowsFormsApp1
                 Adres = p.Adres,
                 Einddatum = p.Einddatum,
             }).OrderBy(p => p.Naam).ToList();
-            ArtsenGridview.Columns["ArtsID"].Visible = false;
+            //ArtsenGridview.Columns["ArtsID"].Visible = false;
 
             MedicatieGridView.DataSource = con.medicatie.Select(p => new {
                 MedicatieID = p.MedicatieID,
                 MedicatieNaam = p.MedicatieNaam,
                 KlantID = p.KlantID,
             }).OrderBy(p => p.MedicatieNaam).ToList();
-            MedicatieGridView.Columns["MedicatieID"].Visible = false;
+            //MedicatieGridView.Columns["MedicatieID"].Visible = false;
         }
 
 
@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
 
         private void MaakKlant_Click(object sender, EventArgs e)
         {
-           //moet nog worden verwijderd
+            //moet nog worden verwijderd
         }
 
         private void BewerkKlant_Click(object sender, EventArgs e)
@@ -67,14 +67,24 @@ namespace WindowsFormsApp1
 
         private void VerwijderKlant_Click(object sender, EventArgs e)
         {
-            //klant Verwijderen
-            int value = Convert.ToInt32(klantidtxtKlant.Text);
+            try
+            {
+                //klant Verwijderen
+                int value = Convert.ToInt32(klantidtxtKlant.Text);
                 //KlantenGridView.CurrentCell.RowIndex;
 
-            Klanten k = con.klanten.Find(value); 
+                Klanten k = con.klanten.Find(value);
 
-            // Klant verwijderen en database opslaan
-            con.klanten.Remove(k);
+                // Klant verwijderen en database opslaan
+
+                con.klanten.Remove(k);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Je hebt geen correct nummer ingevuld.", "System Failier",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             con.SaveChanges();
             KlantenGridView.DataSource = con.klanten.Select(p => new {
                 KlantID = p.KlantID,
@@ -85,8 +95,8 @@ namespace WindowsFormsApp1
                 Plaats = p.Plaats
             }).OrderBy(p => p.Achternaam).ToList();
 
-           /* KlantenGridView.Columns["KlantID"].Visible = false;
-            KlantenGridView.Columns["VerzekeringsID"].Visible = false;*/
+            /* KlantenGridView.Columns["KlantID"].Visible = false;
+             KlantenGridView.Columns["VerzekeringsID"].Visible = false;*/
 
             /*Klanten k = new Klanten();
             k.KlantID = klantid;
@@ -129,7 +139,7 @@ namespace WindowsFormsApp1
                 k.Items.Add(Naam);
             }*/
         }
-        
+
 
         private void FilterArts_Click(object sender, EventArgs e)
         {
@@ -167,7 +177,7 @@ namespace WindowsFormsApp1
                 m.Items.Add(MedicatieID);
             }*/
         }
-                
+
 
         private void FilterMedicatie_Click(object sender, EventArgs e)
         {
@@ -196,31 +206,37 @@ namespace WindowsFormsApp1
 
         private void MaakKlant_Click_1(object sender, EventArgs e)
         {
-            string voornaam = VoornaamtxtKlant.Text;
-            string achternaam = AchternaamtxtKlant.Text;
-            string verzekeringsid = VerzekeringsidtxtKlant.Text;
-            string plaats = PlaatstxtKlant.Text;
-            string adres = AdrestxtKlant.Text;
+            try
+            {
+                string voornaam = VoornaamtxtKlant.Text;
+                string achternaam = AchternaamtxtKlant.Text;
+                string verzekeringsid = VerzekeringsidtxtKlant.Text;
+                string plaats = PlaatstxtKlant.Text;
+                string adres = AdrestxtKlant.Text;
 
-            Klanten k = new Klanten();
-            k.Voornaam = voornaam;
-            k.Achternaam = achternaam;
-            k.Plaats = plaats;
-            k.Adres = adres;
-            con.klanten.Add(k);
-            con.SaveChanges();
-            KlantenGridView.DataSource = con.klanten.Select(p => new {
-                KlantID = p.KlantID,
-                VerzekeringsID = p.VerzekeringsID,
-                Voornaam = p.Voornaam,
-                Achternaam = p.Achternaam,
-                Adres = p.Adres,
-                Plaats = p.Plaats
-            }).OrderBy(p => p.Achternaam).ToList();
-
-            KlantenGridView.Columns["KlantID"].Visible = false;
-            KlantenGridView.Columns["VerzekeringsID"].Visible = false;
+                Klanten k = new Klanten();
+                k.Voornaam = voornaam;
+                k.Achternaam = achternaam;
+                k.Plaats = plaats;
+                k.Adres = adres;
+                con.klanten.Add(k);
+                con.SaveChanges();
+                KlantenGridView.DataSource = con.klanten.Select(p => new
+                {
+                    KlantID = p.KlantID,
+                    VerzekeringsID = p.VerzekeringsID,
+                    Voornaam = p.Voornaam,
+                    Achternaam = p.Achternaam,
+                    Adres = p.Adres,
+                    Plaats = p.Plaats
+                }).OrderBy(p => p.Achternaam).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Something failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+    
 
         private void SearchArtsen_TextChanged(object sender, EventArgs e)
         {
@@ -256,21 +272,30 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string medicatienaam = MedicatieNaamtxt.Text;
-            int klantid = Convert.ToInt32(MedicatieKlantid.Text);
+            try
+            {
+                string medicatienaam = MedicatieNaamtxt.Text;
+                int klantid = Convert.ToInt32(MedicatieKlantid.Text);
 
-            Medicatie k = new Medicatie();
-            k.MedicatieNaam = medicatienaam;
-            k.KlantID = klantid;
-            con.medicatie.Add(k);
-            con.SaveChanges();
-            MedicatieGridView.DataSource = con.medicatie.Select(p => new {
-                MedicatieNaam = p.MedicatieNaam,
-                KlantID = p.KlantID,
-            }).OrderBy(p => p.MedicatieNaam).ToList();
+                Medicatie k = new Medicatie();
+                k.MedicatieNaam = medicatienaam;
+                k.KlantID = klantid;
+                con.medicatie.Add(k);
+                con.SaveChanges();
+                MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+                    MedicatieID = p.MedicatieID,
+                    MedicatieNaam = p.MedicatieNaam,
+                    KlantID = p.KlantID,
+                }).OrderBy(p => p.MedicatieNaam).ToList();
 
-            //MedicatieGridView.Columns["MedicatieNaam"].Visible = false;
+                //MedicatieGridView.Columns["MedicatieNaam"].Visible = false;
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Geen geldig KlantID opgegeven", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void SearchMedicatie_TextChanged(object sender, EventArgs e)
