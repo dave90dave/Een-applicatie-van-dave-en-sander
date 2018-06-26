@@ -69,8 +69,21 @@ namespace WindowsFormsApp1
         private void VerwijderKlant_Click(object sender, EventArgs e)
         {
 
-            int klantid = Convert.ToInt32(klantidtxtKlant.Text);
+            //int klantid = Convert.ToInt32(klantidtxtKlant.Text);
 
+
+            if (KlantenGridView.SelectedRows.Count == 1)
+            {
+                Klanten k = (Klanten)KlantenGridView.CurrentRow.DataBoundItem;
+                var itemToRemove = con.klanten.SingleOrDefault(x => x.KlantID == k.KlantID);
+
+                if (itemToRemove != null)
+                {
+                    con.klanten.Remove(itemToRemove);
+                    con.SaveChanges();
+                    KlantenGridView.DataSource = con.klanten.ToList();
+                }
+            }
 
             /*Klanten k = new Klanten();
             k.KlantID = klantid;
@@ -282,9 +295,9 @@ namespace WindowsFormsApp1
                         /*var query = from Klanten in con.klanten
                         where Klanten.Voornaam.Contains(SrcKlantentxt.Text)
                         select Klanten;*/
-            var query = Klanten.KlantID.SqlQuery("SELECT * FROM Klanten").ToList();
+            //var query = Klanten.KlantID.SqlQuery("SELECT * FROM Klanten").ToList();
             SrcKlantentxt.Text = "";
-            KlantenGridView.DataSource = query.ToList();
+            //KlantenGridView.DataSource = query.ToList();
         }
     }
 }
