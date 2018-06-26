@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
                 Adres = p.Adres,
                 Plaats = p.Plaats
             }).OrderBy(p => p.Achternaam).ToList();
-            KlantenGridView.Columns["KlantID"].Visible = false;
             KlantenGridView.Columns["VerzekeringsID"].Visible = false;
 
             ArtsenGridview.DataSource = con.arts.Select(p => new {
@@ -68,22 +67,26 @@ namespace WindowsFormsApp1
 
         private void VerwijderKlant_Click(object sender, EventArgs e)
         {
+            //klant Verwijderen
+            int value = Convert.ToInt32(klantidtxtKlant.Text);
+                //KlantenGridView.CurrentCell.RowIndex;
 
-            //int klantid = Convert.ToInt32(klantidtxtKlant.Text);
+            Klanten k = con.klanten.Find(value); 
 
+            // Klant verwijderen en database opslaan
+            con.klanten.Remove(k);
+            con.SaveChanges();
+            KlantenGridView.DataSource = con.klanten.Select(p => new {
+                KlantID = p.KlantID,
+                VerzekeringsID = p.VerzekeringsID,
+                Voornaam = p.Voornaam,
+                Achternaam = p.Achternaam,
+                Adres = p.Adres,
+                Plaats = p.Plaats
+            }).OrderBy(p => p.Achternaam).ToList();
 
-            if (KlantenGridView.SelectedRows.Count == 1)
-            {
-                Klanten k = (Klanten)KlantenGridView.CurrentRow.DataBoundItem;
-                var itemToRemove = con.klanten.SingleOrDefault(x => x.KlantID == k.KlantID);
-
-                if (itemToRemove != null)
-                {
-                    con.klanten.Remove(itemToRemove);
-                    con.SaveChanges();
-                    KlantenGridView.DataSource = con.klanten.ToList();
-                }
-            }
+           /* KlantenGridView.Columns["KlantID"].Visible = false;
+            KlantenGridView.Columns["VerzekeringsID"].Visible = false;*/
 
             /*Klanten k = new Klanten();
             k.KlantID = klantid;

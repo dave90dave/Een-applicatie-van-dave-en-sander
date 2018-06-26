@@ -33,17 +33,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ArtsenGridview = new System.Windows.Forms.DataGridView();
             this.VerwijderKlant = new System.Windows.Forms.Button();
-            this.BewerkKlant = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.MedicatieGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.BewerkArts = new System.Windows.Forms.Button();
             this.VerwijderArts = new System.Windows.Forms.Button();
-            this.BewerkMedicatie = new System.Windows.Forms.Button();
             this.VerwijderMedicatie = new System.Windows.Forms.Button();
             this.MaakMedicatiebtn = new System.Windows.Forms.TabControl();
             this.Klantentab = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.klantidtxtKlant = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.VoornaamtxtKlant = new System.Windows.Forms.TextBox();
             this.VerzekeringsidtxtKlant = new System.Windows.Forms.TextBox();
@@ -60,6 +59,8 @@
             this.SrcKlantentxt = new System.Windows.Forms.TextBox();
             this.Artsentab = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Artsidtxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.MaakArtsbtn = new System.Windows.Forms.Button();
             this.NaamArtstxt = new System.Windows.Forms.TextBox();
@@ -73,21 +74,16 @@
             this.Medicatietab = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.MedicatieIDtxt = new System.Windows.Forms.TextBox();
             this.MedicatieNaamtxt = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.MedicatieKlantid = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.SearchMedicatie = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.klantidtxtKlant = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.Artsidtxt = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.MedicatieIDtxt = new System.Windows.Forms.TextBox();
-            this.SelectAllKlantenbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArtsenGridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MedicatieGridView)).BeginInit();
@@ -158,17 +154,6 @@
             this.VerwijderKlant.UseVisualStyleBackColor = true;
             this.VerwijderKlant.Click += new System.EventHandler(this.VerwijderKlant_Click);
             // 
-            // BewerkKlant
-            // 
-            this.BewerkKlant.Location = new System.Drawing.Point(7, 33);
-            this.BewerkKlant.Margin = new System.Windows.Forms.Padding(4);
-            this.BewerkKlant.Name = "BewerkKlant";
-            this.BewerkKlant.Size = new System.Drawing.Size(100, 28);
-            this.BewerkKlant.TabIndex = 6;
-            this.BewerkKlant.Text = "Edit";
-            this.BewerkKlant.UseVisualStyleBackColor = true;
-            this.BewerkKlant.Click += new System.EventHandler(this.BewerkKlant_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -205,17 +190,6 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Medicatie";
             // 
-            // BewerkArts
-            // 
-            this.BewerkArts.Location = new System.Drawing.Point(7, 32);
-            this.BewerkArts.Margin = new System.Windows.Forms.Padding(4);
-            this.BewerkArts.Name = "BewerkArts";
-            this.BewerkArts.Size = new System.Drawing.Size(100, 28);
-            this.BewerkArts.TabIndex = 13;
-            this.BewerkArts.Text = "Edit";
-            this.BewerkArts.UseVisualStyleBackColor = true;
-            this.BewerkArts.Click += new System.EventHandler(this.BewerkArts_Click);
-            // 
             // VerwijderArts
             // 
             this.VerwijderArts.Location = new System.Drawing.Point(115, 32);
@@ -226,17 +200,6 @@
             this.VerwijderArts.Text = "Remove";
             this.VerwijderArts.UseVisualStyleBackColor = true;
             this.VerwijderArts.Click += new System.EventHandler(this.VerwijderArts_Click);
-            // 
-            // BewerkMedicatie
-            // 
-            this.BewerkMedicatie.Location = new System.Drawing.Point(7, 30);
-            this.BewerkMedicatie.Margin = new System.Windows.Forms.Padding(4);
-            this.BewerkMedicatie.Name = "BewerkMedicatie";
-            this.BewerkMedicatie.Size = new System.Drawing.Size(100, 28);
-            this.BewerkMedicatie.TabIndex = 17;
-            this.BewerkMedicatie.Text = "Edit";
-            this.BewerkMedicatie.UseVisualStyleBackColor = true;
-            this.BewerkMedicatie.Click += new System.EventHandler(this.BewerkMedicatie_Click);
             // 
             // VerwijderMedicatie
             // 
@@ -263,7 +226,8 @@
             // 
             // Klantentab
             // 
-            this.Klantentab.Controls.Add(this.SelectAllKlantenbtn);
+            this.Klantentab.Controls.Add(this.label14);
+            this.Klantentab.Controls.Add(this.klantidtxtKlant);
             this.Klantentab.Controls.Add(this.groupBox7);
             this.Klantentab.Controls.Add(this.groupBox6);
             this.Klantentab.Controls.Add(this.groupBox1);
@@ -281,8 +245,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.label14);
-            this.groupBox7.Controls.Add(this.klantidtxtKlant);
             this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.VoornaamtxtKlant);
             this.groupBox7.Controls.Add(this.VerzekeringsidtxtKlant);
@@ -300,6 +262,23 @@
             this.groupBox7.TabIndex = 56;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Maken";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(703, 351);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 17);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "KlantID";
+            // 
+            // klantidtxtKlant
+            // 
+            this.klantidtxtKlant.Location = new System.Drawing.Point(812, 346);
+            this.klantidtxtKlant.Name = "klantidtxtKlant";
+            this.klantidtxtKlant.Size = new System.Drawing.Size(132, 22);
+            this.klantidtxtKlant.TabIndex = 52;
             // 
             // label4
             // 
@@ -404,7 +383,6 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.BewerkKlant);
             this.groupBox6.Controls.Add(this.VerwijderKlant);
             this.groupBox6.Location = new System.Drawing.Point(452, 333);
             this.groupBox6.Name = "groupBox6";
@@ -464,6 +442,23 @@
             this.groupBox8.TabIndex = 57;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Maken";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(22, 40);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(46, 17);
+            this.label15.TabIndex = 55;
+            this.label15.Text = "ArtsID";
+            // 
+            // Artsidtxt
+            // 
+            this.Artsidtxt.Location = new System.Drawing.Point(103, 35);
+            this.Artsidtxt.Name = "Artsidtxt";
+            this.Artsidtxt.Size = new System.Drawing.Size(145, 22);
+            this.Artsidtxt.TabIndex = 54;
             // 
             // label9
             // 
@@ -526,7 +521,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.BewerkArts);
             this.groupBox5.Controls.Add(this.VerwijderArts);
             this.groupBox5.Location = new System.Drawing.Point(449, 341);
             this.groupBox5.Name = "groupBox5";
@@ -594,6 +588,16 @@
             this.label10.TabIndex = 44;
             this.label10.Text = "Medicatie Naam";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 30);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 17);
+            this.label16.TabIndex = 55;
+            this.label16.Text = "MedicatieID";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(7, 129);
@@ -605,12 +609,26 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // MedicatieIDtxt
+            // 
+            this.MedicatieIDtxt.Location = new System.Drawing.Point(126, 30);
+            this.MedicatieIDtxt.Name = "MedicatieIDtxt";
+            this.MedicatieIDtxt.Size = new System.Drawing.Size(132, 22);
+            this.MedicatieIDtxt.TabIndex = 54;
+            // 
             // MedicatieNaamtxt
             // 
             this.MedicatieNaamtxt.Location = new System.Drawing.Point(126, 57);
             this.MedicatieNaamtxt.Name = "MedicatieNaamtxt";
             this.MedicatieNaamtxt.Size = new System.Drawing.Size(132, 22);
             this.MedicatieNaamtxt.TabIndex = 43;
+            // 
+            // MedicatieKlantid
+            // 
+            this.MedicatieKlantid.Location = new System.Drawing.Point(126, 85);
+            this.MedicatieKlantid.Name = "MedicatieKlantid";
+            this.MedicatieKlantid.Size = new System.Drawing.Size(132, 22);
+            this.MedicatieKlantid.TabIndex = 45;
             // 
             // label11
             // 
@@ -621,16 +639,8 @@
             this.label11.TabIndex = 46;
             this.label11.Text = "Klant ID";
             // 
-            // MedicatieKlantid
-            // 
-            this.MedicatieKlantid.Location = new System.Drawing.Point(126, 85);
-            this.MedicatieKlantid.Name = "MedicatieKlantid";
-            this.MedicatieKlantid.Size = new System.Drawing.Size(132, 22);
-            this.MedicatieKlantid.TabIndex = 45;
-            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.BewerkMedicatie);
             this.groupBox4.Controls.Add(this.VerwijderMedicatie);
             this.groupBox4.Location = new System.Drawing.Point(456, 344);
             this.groupBox4.Name = "groupBox4";
@@ -662,67 +672,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // klantidtxtKlant
-            // 
-            this.klantidtxtKlant.Location = new System.Drawing.Point(116, 30);
-            this.klantidtxtKlant.Name = "klantidtxtKlant";
-            this.klantidtxtKlant.Size = new System.Drawing.Size(132, 22);
-            this.klantidtxtKlant.TabIndex = 52;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 35);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 17);
-            this.label14.TabIndex = 53;
-            this.label14.Text = "KlantID";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(22, 40);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(46, 17);
-            this.label15.TabIndex = 55;
-            this.label15.Text = "ArtsID";
-            // 
-            // Artsidtxt
-            // 
-            this.Artsidtxt.Location = new System.Drawing.Point(103, 35);
-            this.Artsidtxt.Name = "Artsidtxt";
-            this.Artsidtxt.Size = new System.Drawing.Size(145, 22);
-            this.Artsidtxt.TabIndex = 54;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 30);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 17);
-            this.label16.TabIndex = 55;
-            this.label16.Text = "MedicatieID";
-            // 
-            // MedicatieIDtxt
-            // 
-            this.MedicatieIDtxt.Location = new System.Drawing.Point(126, 30);
-            this.MedicatieIDtxt.Name = "MedicatieIDtxt";
-            this.MedicatieIDtxt.Size = new System.Drawing.Size(132, 22);
-            this.MedicatieIDtxt.TabIndex = 54;
-            // 
-            // SelectAllKlantenbtn
-            // 
-            this.SelectAllKlantenbtn.Location = new System.Drawing.Point(275, 372);
-            this.SelectAllKlantenbtn.Name = "SelectAllKlantenbtn";
-            this.SelectAllKlantenbtn.Size = new System.Drawing.Size(119, 23);
-            this.SelectAllKlantenbtn.TabIndex = 57;
-            this.SelectAllKlantenbtn.Text = "Alles weergeven";
-            this.SelectAllKlantenbtn.UseVisualStyleBackColor = true;
-            this.SelectAllKlantenbtn.Click += new System.EventHandler(this.SelectAllKlantenbtn_Click);
             // 
             // Form1
             // 
@@ -769,13 +718,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView ArtsenGridview;
         private System.Windows.Forms.Button VerwijderKlant;
-        private System.Windows.Forms.Button BewerkKlant;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView MedicatieGridView;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BewerkArts;
         private System.Windows.Forms.Button VerwijderArts;
-        private System.Windows.Forms.Button BewerkMedicatie;
         private System.Windows.Forms.Button VerwijderMedicatie;
         private System.Windows.Forms.TabControl MaakMedicatiebtn;
         private System.Windows.Forms.TabPage Klantentab;
@@ -823,7 +769,6 @@
         private System.Windows.Forms.TextBox Artsidtxt;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox MedicatieIDtxt;
-        private System.Windows.Forms.Button SelectAllKlantenbtn;
     }
 }
 
