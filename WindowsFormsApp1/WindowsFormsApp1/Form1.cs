@@ -70,8 +70,7 @@ namespace WindowsFormsApp1
             try
             {
                 //klant Verwijderen
-                int value = Convert.ToInt32(klantidtxtKlant.Text);
-                //KlantenGridView.CurrentCell.RowIndex;
+                int value = int.Parse(KlantenGridView.CurrentRow.Cells[0].Value.ToString());
 
                 Klanten k = con.klanten.Find(value);
 
@@ -97,19 +96,6 @@ namespace WindowsFormsApp1
 
             /* KlantenGridView.Columns["KlantID"].Visible = false;
              KlantenGridView.Columns["VerzekeringsID"].Visible = false;*/
-
-            /*Klanten k = new Klanten();
-            k.KlantID = klantid;
-            con.klanten.Remove(k);
-            con.klanten(klantid).State = EntityState.Deleted;
-            con.SaveChanges();*/
-
-            /*
-            var delklant = new Klanten { KlantID = klantid };
-            con.Entry(delklant).State = EntityState.Deleted;
-            con.SaveChanges();
-            */
-
         }
 
         private void MaakArts_Click(object sender, EventArgs e)
@@ -153,7 +139,32 @@ namespace WindowsFormsApp1
 
         private void VerwijderArts_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //arts Verwijderen
+                int value = int.Parse(ArtsenGridview.CurrentRow.Cells[0].Value.ToString());
 
+                Arts k = con.arts.Find(value);
+
+                //arts verwijderen en database opslaan
+
+                con.arts.Remove(k);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Je hebt geen correct nummer ingevuld.", "System Failier",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.SaveChanges();
+
+            ArtsenGridview.DataSource = con.arts.Select(p => new {
+                ArtsID = p.ArtsID,
+                Naam = p.Naam,
+                Adres = p.Adres,
+                Einddatum = p.Einddatum
+                //  Achternaam = p.Einddatum,
+            }).OrderBy(p => p.Naam).ToList();
         }
 
         private void MaakMedicatie_Click(object sender, EventArgs e)
@@ -191,7 +202,30 @@ namespace WindowsFormsApp1
 
         private void VerwijderMedicatie_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //medicatie Verwijderen
+                int value = int.Parse(MedicatieGridView.CurrentRow.Cells[0].Value.ToString());
 
+                Medicatie k = con.medicatie.Find(value);
+
+                // medicatie verwijderen en database opslaan
+
+                con.medicatie.Remove(k);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Je hebt geen correct nummer ingevuld.", "System Failier",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.SaveChanges();
+
+            MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+                MedicatieID = p.MedicatieID,
+                MedicatieNaam = p.MedicatieNaam,
+                KlantID = p.KlantID,
+            }).OrderBy(p => p.MedicatieNaam).ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
