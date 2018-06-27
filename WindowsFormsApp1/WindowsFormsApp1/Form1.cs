@@ -23,9 +23,22 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Build a list
+            var dataSource = new List<Combobox>();
+            dataSource.Add(new Combobox() { artsidcombo = "test" });
+            dataSource.Add(new Combobox() { artsnaamcombo = "test2"});
+
+            //Setup data binding
+            this.ArtsIDtxtklant.DataSource = dataSource;
+            this.ArtsIDtxtklant.DisplayMember = "test";
+            //this.ArtsIDtxtklant.ValueMember = "test2";
+
+            // make it readonly
+            this.ArtsIDtxtklant.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
             KlantenGridView.DataSource = con.klanten.Select(p => new {
                 KlantID = p.KlantID,
-                VerzekeringsID = p.VerzekeringsID,
                 Voornaam = p.Voornaam,
                 Achternaam = p.Achternaam,
                 Adres = p.Adres,
@@ -87,7 +100,6 @@ namespace WindowsFormsApp1
             con.SaveChanges();
             KlantenGridView.DataSource = con.klanten.Select(p => new {
                 KlantID = p.KlantID,
-                VerzekeringsID = p.VerzekeringsID,
                 Voornaam = p.Voornaam,
                 Achternaam = p.Achternaam,
                 Adres = p.Adres,
@@ -244,7 +256,6 @@ namespace WindowsFormsApp1
             {
                 string voornaam = VoornaamtxtKlant.Text;
                 string achternaam = AchternaamtxtKlant.Text;
-                string verzekeringsid = VerzekeringsidtxtKlant.Text;
                 string plaats = PlaatstxtKlant.Text;
                 string adres = AdrestxtKlant.Text;
 
@@ -258,7 +269,6 @@ namespace WindowsFormsApp1
                 KlantenGridView.DataSource = con.klanten.Select(p => new
                 {
                     KlantID = p.KlantID,
-                    VerzekeringsID = p.VerzekeringsID,
                     Voornaam = p.Voornaam,
                     Achternaam = p.Achternaam,
                     Adres = p.Adres,
@@ -360,6 +370,10 @@ namespace WindowsFormsApp1
             //var query = Klanten.KlantID.SqlQuery("SELECT * FROM Klanten").ToList();
             SrcKlantentxt.Text = "";
             //KlantenGridView.DataSource = query.ToList();
+        }
+
+        private void ArtsIDtxtklant_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

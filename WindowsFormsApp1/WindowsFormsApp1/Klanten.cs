@@ -12,12 +12,10 @@ namespace WindowsFormsApp1
     {
         [Key]
         public int KlantID { get; set; }
-        public int VerzekeringsID { get; set; }
         public string Voornaam { get; set; }
         public string Achternaam { get; set; }
         public string Adres { get; set; }
         public string Plaats { get; set; }
-        
-
+        public List<Klanten> Arts { get; set; }
     }
 }

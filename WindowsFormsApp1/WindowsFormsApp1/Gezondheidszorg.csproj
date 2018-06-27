@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arts.cs" />
+    <Compile Include="Combobox.cs" />
     <Compile Include="database.cs" />
     <Compile Include="Klanten.cs" />
     <Compile Include="Form1.cs">
@@ -74,6 +75,10 @@
     <Compile Include="Migrations\201806251233064_lol.Designer.cs">
       <DependentUpon>201806251233064_lol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806271514096_lol2.cs" />
+    <Compile Include="Migrations\201806271514096_lol2.Designer.cs">
+      <DependentUpon>201806271514096_lol2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251233064_lol.resx">
       <DependentUpon>201806251233064_lol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806271514096_lol2.resx">
+      <DependentUpon>201806271514096_lol2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
