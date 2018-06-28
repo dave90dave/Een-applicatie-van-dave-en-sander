@@ -35,8 +35,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.MedicatieNaamtxt = new System.Windows.Forms.TextBox();
-            this.MedicatieKlantid = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.VerwijderMedicatie = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -90,6 +88,14 @@
             this.Klanten_MedicatieLinkbtn = new System.Windows.Forms.Button();
             this.Klanten_MedicatieUnlinkbtn = new System.Windows.Forms.Button();
             this.KlantenMedicatieLinkGridview = new System.Windows.Forms.DataGridView();
+            this.klanten_verzekeringgridview = new System.Windows.Forms.DataGridView();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.KlantenVerzekeringNaamtxt = new System.Windows.Forms.TextBox();
+            this.LinkKlanten_verzekeringbtn = new System.Windows.Forms.Button();
+            this.UnlinkKlanten_verzekeringbtn = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.KlantIDlabel = new System.Windows.Forms.Label();
+            this.KlantenIDVerzekeringtxt = new System.Windows.Forms.TextBox();
             this.Medicatietab.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -107,9 +113,12 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenGridView)).BeginInit();
             this.MaakMedicatiebtn.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klanten_verzekeringgridview)).BeginInit();
+            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -139,11 +148,9 @@
             this.groupBox9.Controls.Add(this.label10);
             this.groupBox9.Controls.Add(this.button2);
             this.groupBox9.Controls.Add(this.MedicatieNaamtxt);
-            this.groupBox9.Controls.Add(this.MedicatieKlantid);
-            this.groupBox9.Controls.Add(this.label11);
             this.groupBox9.Location = new System.Drawing.Point(694, 43);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(272, 136);
+            this.groupBox9.Size = new System.Drawing.Size(272, 98);
             this.groupBox9.TabIndex = 57;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Maken";
@@ -159,7 +166,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(7, 99);
+            this.button2.Location = new System.Drawing.Point(7, 60);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -174,22 +181,6 @@
             this.MedicatieNaamtxt.Name = "MedicatieNaamtxt";
             this.MedicatieNaamtxt.Size = new System.Drawing.Size(132, 22);
             this.MedicatieNaamtxt.TabIndex = 43;
-            // 
-            // MedicatieKlantid
-            // 
-            this.MedicatieKlantid.Location = new System.Drawing.Point(126, 55);
-            this.MedicatieKlantid.Name = "MedicatieKlantid";
-            this.MedicatieKlantid.Size = new System.Drawing.Size(132, 22);
-            this.MedicatieKlantid.TabIndex = 45;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 58);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 17);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Klant ID";
             // 
             // groupBox4
             // 
@@ -241,7 +232,7 @@
             this.MedicatieGridView.Name = "MedicatieGridView";
             this.MedicatieGridView.ReadOnly = true;
             this.MedicatieGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MedicatieGridView.Size = new System.Drawing.Size(667, 294);
+            this.MedicatieGridView.Size = new System.Drawing.Size(667, 283);
             this.MedicatieGridView.TabIndex = 8;
             this.MedicatieGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MedicatieGridView_CellContentClick);
             // 
@@ -249,7 +240,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 9);
+            this.label3.Location = new System.Drawing.Point(1, 8);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 31);
@@ -392,12 +383,12 @@
             this.ArtsenGridview.AllowUserToDeleteRows = false;
             this.ArtsenGridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ArtsenGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ArtsenGridview.Location = new System.Drawing.Point(4, 41);
+            this.ArtsenGridview.Location = new System.Drawing.Point(8, 43);
             this.ArtsenGridview.Margin = new System.Windows.Forms.Padding(4);
             this.ArtsenGridview.Name = "ArtsenGridview";
             this.ArtsenGridview.ReadOnly = true;
             this.ArtsenGridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ArtsenGridview.Size = new System.Drawing.Size(667, 293);
+            this.ArtsenGridview.Size = new System.Drawing.Size(667, 283);
             this.ArtsenGridview.TabIndex = 4;
             this.ArtsenGridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ArtsenGridview_CellContentClick);
             // 
@@ -405,7 +396,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 6);
+            this.label2.Location = new System.Drawing.Point(1, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 31);
@@ -628,7 +619,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Location = new System.Drawing.Point(2, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 31);
@@ -651,12 +642,15 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.UnlinkKlanten_verzekeringbtn);
+            this.tabPage1.Controls.Add(this.groupBox12);
+            this.tabPage1.Controls.Add(this.klanten_verzekeringgridview);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1008, 433);
             this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Verzekering";
+            this.tabPage1.Text = "Klanten_Verzekering";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -744,8 +738,83 @@
             this.KlantenMedicatieLinkGridview.Location = new System.Drawing.Point(6, 6);
             this.KlantenMedicatieLinkGridview.Name = "KlantenMedicatieLinkGridview";
             this.KlantenMedicatieLinkGridview.RowTemplate.Height = 24;
-            this.KlantenMedicatieLinkGridview.Size = new System.Drawing.Size(570, 307);
+            this.KlantenMedicatieLinkGridview.Size = new System.Drawing.Size(586, 283);
             this.KlantenMedicatieLinkGridview.TabIndex = 1;
+            // 
+            // klanten_verzekeringgridview
+            // 
+            this.klanten_verzekeringgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.klanten_verzekeringgridview.Location = new System.Drawing.Point(6, 6);
+            this.klanten_verzekeringgridview.Name = "klanten_verzekeringgridview";
+            this.klanten_verzekeringgridview.RowTemplate.Height = 24;
+            this.klanten_verzekeringgridview.Size = new System.Drawing.Size(567, 268);
+            this.klanten_verzekeringgridview.TabIndex = 0;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.KlantenIDVerzekeringtxt);
+            this.groupBox12.Controls.Add(this.KlantIDlabel);
+            this.groupBox12.Controls.Add(this.label11);
+            this.groupBox12.Controls.Add(this.LinkKlanten_verzekeringbtn);
+            this.groupBox12.Controls.Add(this.KlantenVerzekeringNaamtxt);
+            this.groupBox12.Location = new System.Drawing.Point(619, 20);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(286, 130);
+            this.groupBox12.TabIndex = 1;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Maken";
+            // 
+            // KlantenVerzekeringNaamtxt
+            // 
+            this.KlantenVerzekeringNaamtxt.Location = new System.Drawing.Point(133, 35);
+            this.KlantenVerzekeringNaamtxt.Name = "KlantenVerzekeringNaamtxt";
+            this.KlantenVerzekeringNaamtxt.Size = new System.Drawing.Size(116, 22);
+            this.KlantenVerzekeringNaamtxt.TabIndex = 0;
+            // 
+            // LinkKlanten_verzekeringbtn
+            // 
+            this.LinkKlanten_verzekeringbtn.Location = new System.Drawing.Point(10, 93);
+            this.LinkKlanten_verzekeringbtn.Name = "LinkKlanten_verzekeringbtn";
+            this.LinkKlanten_verzekeringbtn.Size = new System.Drawing.Size(75, 23);
+            this.LinkKlanten_verzekeringbtn.TabIndex = 1;
+            this.LinkKlanten_verzekeringbtn.Text = "Link";
+            this.LinkKlanten_verzekeringbtn.UseVisualStyleBackColor = true;
+            this.LinkKlanten_verzekeringbtn.Click += new System.EventHandler(this.LinkKlanten_verzekeringbtn_Click);
+            // 
+            // UnlinkKlanten_verzekeringbtn
+            // 
+            this.UnlinkKlanten_verzekeringbtn.Location = new System.Drawing.Point(456, 291);
+            this.UnlinkKlanten_verzekeringbtn.Name = "UnlinkKlanten_verzekeringbtn";
+            this.UnlinkKlanten_verzekeringbtn.Size = new System.Drawing.Size(75, 23);
+            this.UnlinkKlanten_verzekeringbtn.TabIndex = 2;
+            this.UnlinkKlanten_verzekeringbtn.Text = "Unlink";
+            this.UnlinkKlanten_verzekeringbtn.UseVisualStyleBackColor = true;
+            this.UnlinkKlanten_verzekeringbtn.Click += new System.EventHandler(this.UnlinkKlanten_verzekeringbtn_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(123, 17);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Verzekering naam";
+            // 
+            // KlantIDlabel
+            // 
+            this.KlantIDlabel.AutoSize = true;
+            this.KlantIDlabel.Location = new System.Drawing.Point(7, 63);
+            this.KlantIDlabel.Name = "KlantIDlabel";
+            this.KlantIDlabel.Size = new System.Drawing.Size(53, 17);
+            this.KlantIDlabel.TabIndex = 3;
+            this.KlantIDlabel.Text = "KlantID";
+            // 
+            // KlantenIDVerzekeringtxt
+            // 
+            this.KlantenIDVerzekeringtxt.Location = new System.Drawing.Point(133, 63);
+            this.KlantenIDVerzekeringtxt.Name = "KlantenIDVerzekeringtxt";
+            this.KlantenIDVerzekeringtxt.Size = new System.Drawing.Size(116, 22);
+            this.KlantenIDVerzekeringtxt.TabIndex = 4;
             // 
             // Form1
             // 
@@ -783,10 +852,14 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenGridView)).EndInit();
             this.MaakMedicatiebtn.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klanten_verzekeringgridview)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -798,8 +871,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox MedicatieNaamtxt;
-        private System.Windows.Forms.TextBox MedicatieKlantid;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button VerwijderMedicatie;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -853,6 +924,14 @@
         private System.Windows.Forms.TextBox ArtsIDtxtklant;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.Button UnlinkKlanten_verzekeringbtn;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Button LinkKlanten_verzekeringbtn;
+        private System.Windows.Forms.TextBox KlantenVerzekeringNaamtxt;
+        private System.Windows.Forms.DataGridView klanten_verzekeringgridview;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox KlantenIDVerzekeringtxt;
+        private System.Windows.Forms.Label KlantIDlabel;
     }
 }
 

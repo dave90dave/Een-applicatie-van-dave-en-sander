@@ -48,7 +48,6 @@ namespace WindowsFormsApp1
             {
                 MedicatieID = p.MedicatieID,
                 MedicatieNaam = p.MedicatieNaam,
-                KlantID = p.KlantID,
             }).OrderBy(p => p.MedicatieNaam).ToList();
             //MedicatieGridView.Columns["MedicatieID"].Visible = false;
 
@@ -57,7 +56,16 @@ namespace WindowsFormsApp1
                 MedicatieID = p.MedicatieID,
                 KlantID = p.KlantID
             }).OrderBy(p => p.KlantID).ToList();
+
+            klanten_verzekeringgridview.DataSource = con.klantenverzekering.Select(p => new
+            {
+                VerzekeringID = p.VerzekeringID,
+                VerzekeringNaam = p.VerzekeringNaam,
+                KlantID = p.KlantID
+            }).OrderBy(p => p.KlantID).ToList();
         }
+
+
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -236,7 +244,6 @@ namespace WindowsFormsApp1
             {
                 MedicatieID = p.MedicatieID,
                 MedicatieNaam = p.MedicatieNaam,
-                KlantID = p.KlantID,
             }).OrderBy(p => p.MedicatieNaam).ToList();
         }
 
@@ -322,18 +329,15 @@ namespace WindowsFormsApp1
             try
             {
                 string medicatienaam = MedicatieNaamtxt.Text;
-                int klantid = Convert.ToInt32(MedicatieKlantid.Text);
 
                 Medicatie k = new Medicatie();
                 k.MedicatieNaam = medicatienaam;
-                k.KlantID = klantid;
                 con.medicatie.Add(k);
                 con.SaveChanges();
                 MedicatieGridView.DataSource = con.medicatie.Select(p => new
                 {
                     MedicatieID = p.MedicatieID,
                     MedicatieNaam = p.MedicatieNaam,
-                    KlantID = p.KlantID,
                 }).OrderBy(p => p.MedicatieNaam).ToList();
 
                 //MedicatieGridView.Columns["MedicatieNaam"].Visible = false;
@@ -443,7 +447,7 @@ namespace WindowsFormsApp1
         {
 
             foreach (DataGridViewRow row in KlantenGridView.SelectedRows)
-                gegevens.Add("Naam: " + row.Cells[3].Value.ToString() + " " + row.Cells[4].Value.ToString() + ", Adres: " + row.Cells[5].Value.ToString() + ", Postcode: " + row.Cells[6].Value.ToString());
+                gegevens.Add("Naam: " + row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString() + ", Adres: " + row.Cells[3].Value.ToString() + ", Plaats: " + row.Cells[4].Value.ToString());
 
             PrintDocument pd = new PrintDocument();
             pd.PrintPage += new PrintPageEventHandler(PrintImage);
@@ -464,6 +468,60 @@ namespace WindowsFormsApp1
                 y += 20f;
                 drawPoint = new PointF(x, y);
             }
+        }
+
+        private void LinkKlanten_verzekeringbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string naam = KlantenVerzekeringNaamtxt.Text;
+                int klantid = Convert.ToInt16(KlantenIDVerzekeringtxt.Text);
+
+                KlantenVerzekering k = new KlantenVerzekering();
+                k.VerzekeringNaam = naam;
+                k.KlantID = klantid;
+                con.klantenverzekering.Add(k);
+                con.SaveChanges();
+                klanten_verzekeringgridview.DataSource = con.klantenverzekering.Select(p => new
+                {
+                    VerzekeringID = p.VerzekeringID,
+                    VerzekeringNaam = p.VerzekeringNaam,
+                    KlantID = p.KlantID,
+                }).OrderBy(p => p.VerzekeringNaam).ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Geen geldig KlantID opgegeven", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UnlinkKlanten_verzekeringbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //medicatie Verwijderen
+                int value = int.Parse(klanten_verzekeringgridview.CurrentRow.Cells[0].Value.ToString());
+
+                KlantenVerzekering k = con.klantenverzekering.Find(value);
+
+                // medicatie verwijderen en database opslaan
+
+                con.klantenverzekering.Remove(k);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Je hebt geen correct nummer ingevuld.", "System Failier",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.SaveChanges();
+
+            klanten_verzekeringgridview.DataSource = con.klantenverzekering.Select(p => new
+            {
+                VerzekeringID = p.VerzekeringID,
+                VerzekeringNaam = p.VerzekeringNaam,
+                KlantID = p.KlantID,
+            }).OrderBy(p => p.VerzekeringID).ToList();
         }
     }
 }

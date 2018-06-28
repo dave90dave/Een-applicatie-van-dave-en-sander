@@ -48,14 +48,6 @@ C:\Users\Dave\Documents\GitHub\projektruski nieuw\WindowsFormsApp1\WindowsFormsA
 C:\Users\Dave\Documents\GitHub\projektruski nieuw\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CopyComplete
 C:\Users\Dave\Documents\GitHub\projektruski nieuw\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Dave\Documents\GitHub\projektruski nieuw\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.InitialCreate.resources
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.sander1.resources
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.GenerateResource.cache
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
@@ -63,10 +55,21 @@ C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\Wi
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.xml
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CopyComplete
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.InitialCreate.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.sander1.resources
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.lol.resources
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.lol2.resources
-C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csprojAssemblyReference.cache
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.dave2.resources
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations.dave3.resources
 C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations._5.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Gezondheidszorg.csproj.CopyComplete
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations._6.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations._7.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations._8.resources
+C:\Users\Administrator\Documents\Gezondheidszorg-Sander-Dave\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Migrations._9.resources

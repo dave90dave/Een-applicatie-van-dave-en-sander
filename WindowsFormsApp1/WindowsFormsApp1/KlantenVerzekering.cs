@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+
 
 namespace WindowsFormsApp1
 {
-    class Medicatie
+    class KlantenVerzekering
     {
         [Key]
-        public int MedicatieID { get; set; }
-        public string MedicatieNaam { get; set; }
+        public int VerzekeringID { get; set; }
+        public string VerzekeringNaam { get; set; }
+        public int KlantID { get; set; }
+        public List<Klanten> Klanten { get; set; }
     }
 }

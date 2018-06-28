@@ -14,5 +14,6 @@ namespace WindowsFormsApp1
         public DbSet<Arts> arts { get; set; }
         public DbSet<Verzekering> verzekering { get; set; }
         public DbSet<KlantenMedicatie> KlantenMedicatie { get; set; }
+        public DbSet<KlantenVerzekering> klantenverzekering { get; set; }
     }
 }
