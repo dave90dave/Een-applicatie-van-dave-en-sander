@@ -60,7 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Klantentab = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.Printbtn = new System.Windows.Forms.Button();
+            this.btn_print = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.ArtsIDtxtklant = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -432,7 +432,7 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.Printbtn);
+            this.groupBox11.Controls.Add(this.btn_print);
             this.groupBox11.Location = new System.Drawing.Point(381, 337);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(123, 82);
@@ -440,15 +440,15 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Print";
             // 
-            // Printbtn
+            // btn_print
             // 
-            this.Printbtn.Location = new System.Drawing.Point(18, 29);
-            this.Printbtn.Name = "Printbtn";
-            this.Printbtn.Size = new System.Drawing.Size(86, 29);
-            this.Printbtn.TabIndex = 0;
-            this.Printbtn.Text = "Print";
-            this.Printbtn.UseVisualStyleBackColor = true;
-            this.Printbtn.Click += new System.EventHandler(this.Printbtn_Click);
+            this.btn_print.Location = new System.Drawing.Point(18, 29);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(86, 29);
+            this.btn_print.TabIndex = 0;
+            this.btn_print.Text = "Print";
+            this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // groupBox7
             // 
@@ -852,7 +852,7 @@
         private System.Windows.Forms.TextBox KlantIDKlantenMedicatietxt;
         private System.Windows.Forms.TextBox ArtsIDtxtklant;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Button Printbtn;
+        private System.Windows.Forms.Button btn_print;
     }
 }
 

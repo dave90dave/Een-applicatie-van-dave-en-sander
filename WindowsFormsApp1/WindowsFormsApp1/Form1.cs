@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+
 /*using System.Data.EntityState;*/
 
 namespace WindowsFormsApp1
@@ -435,9 +437,35 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Printbtn_Click(object sender, EventArgs e)
+        public List<string> gegevens = new List<string>();
+
+        private void btn_print_Click(object sender, EventArgs e)
         {
 
+            foreach (DataGridViewRow row in KlantenGridView.SelectedRows)
+                gegevens.Add("Naam: " + row.Cells[3].Value.ToString() + " " + row.Cells[4].Value.ToString() + ", Adres: " + row.Cells[5].Value.ToString() + ", Postcode: " + row.Cells[6].Value.ToString());
+
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(PrintImage);
+            pd.Print();
+            gegevens.Clear();
+        }
+        public void PrintImage(object o, PrintPageEventArgs e)
+        {
+            float x = 10f;
+            float y = 10f;
+            Font drawFont = new Font("Arial", 11);
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
+            PointF drawPoint = new PointF(x, y);
+
+            foreach (string item in gegevens)
+            {
+                e.Graphics.DrawString(item, drawFont, drawBrush, drawPoint);
+                y += 20f;
+                drawPoint = new PointF(x, y);
+            }
         }
     }
 }
+
+        
