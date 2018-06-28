@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public string Achternaam { get; set; }
         public string Adres { get; set; }
         public string Plaats { get; set; }
-        public List<Klanten> Arts { get; set; }
+        public int ArtsID { get; set; }
+        public List<Arts> Arts { get; set; }
     }
 }

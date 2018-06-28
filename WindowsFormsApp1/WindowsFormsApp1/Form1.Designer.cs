@@ -59,8 +59,10 @@
             this.ArtsenGridview = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.Klantentab = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.Printbtn = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.ArtsIDtxtklant = new System.Windows.Forms.ComboBox();
+            this.ArtsIDtxtklant = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.VoornaamtxtKlant = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -80,14 +82,14 @@
             this.MaakMedicatiebtn = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Klanten_MedicatieLinkbtn = new System.Windows.Forms.Button();
-            this.KlantenMedicatieLinkGridview = new System.Windows.Forms.DataGridView();
-            this.Klanten_MedicatieUnlinkbtn = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.KlantIDKlantenMedicatietxt = new System.Windows.Forms.TextBox();
-            this.MedicatieIDKlantenMedicatietxt = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.MedicatieIDKlantenMedicatietxt = new System.Windows.Forms.TextBox();
+            this.KlantIDKlantenMedicatietxt = new System.Windows.Forms.TextBox();
+            this.Klanten_MedicatieLinkbtn = new System.Windows.Forms.Button();
+            this.Klanten_MedicatieUnlinkbtn = new System.Windows.Forms.Button();
+            this.KlantenMedicatieLinkGridview = new System.Windows.Forms.DataGridView();
             this.Medicatietab.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -99,14 +101,15 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtsenGridview)).BeginInit();
             this.Klantentab.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenGridView)).BeginInit();
             this.MaakMedicatiebtn.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).BeginInit();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -411,6 +414,7 @@
             // 
             // Klantentab
             // 
+            this.Klantentab.Controls.Add(this.groupBox11);
             this.Klantentab.Controls.Add(this.groupBox7);
             this.Klantentab.Controls.Add(this.groupBox6);
             this.Klantentab.Controls.Add(this.groupBox1);
@@ -425,6 +429,26 @@
             this.Klantentab.Text = "Klanten";
             this.Klantentab.UseVisualStyleBackColor = true;
             this.Klantentab.Click += new System.EventHandler(this.Klantentab_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.Printbtn);
+            this.groupBox11.Location = new System.Drawing.Point(381, 337);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(123, 82);
+            this.groupBox11.TabIndex = 57;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Print";
+            // 
+            // Printbtn
+            // 
+            this.Printbtn.Location = new System.Drawing.Point(18, 29);
+            this.Printbtn.Name = "Printbtn";
+            this.Printbtn.Size = new System.Drawing.Size(86, 29);
+            this.Printbtn.TabIndex = 0;
+            this.Printbtn.Text = "Print";
+            this.Printbtn.UseVisualStyleBackColor = true;
+            this.Printbtn.Click += new System.EventHandler(this.Printbtn_Click);
             // 
             // groupBox7
             // 
@@ -448,12 +472,10 @@
             // 
             // ArtsIDtxtklant
             // 
-            this.ArtsIDtxtklant.FormattingEnabled = true;
-            this.ArtsIDtxtklant.Location = new System.Drawing.Point(136, 18);
+            this.ArtsIDtxtklant.Location = new System.Drawing.Point(177, 27);
             this.ArtsIDtxtklant.Name = "ArtsIDtxtklant";
-            this.ArtsIDtxtklant.Size = new System.Drawing.Size(132, 24);
+            this.ArtsIDtxtklant.Size = new System.Drawing.Size(91, 22);
             this.ArtsIDtxtklant.TabIndex = 52;
-            this.ArtsIDtxtklant.SelectedIndexChanged += new System.EventHandler(this.ArtsIDtxtklant_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -461,9 +483,9 @@
             this.label4.Location = new System.Drawing.Point(7, 27);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 17);
+            this.label4.Size = new System.Drawing.Size(169, 17);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Toegewezen aan:";
+            this.label4.Text = "Toegewezen aan (ArtsID)";
             // 
             // VoornaamtxtKlant
             // 
@@ -650,35 +672,6 @@
             this.tabPage2.Text = "Klanten_Medicatie";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Klanten_MedicatieLinkbtn
-            // 
-            this.Klanten_MedicatieLinkbtn.Location = new System.Drawing.Point(6, 96);
-            this.Klanten_MedicatieLinkbtn.Name = "Klanten_MedicatieLinkbtn";
-            this.Klanten_MedicatieLinkbtn.Size = new System.Drawing.Size(75, 23);
-            this.Klanten_MedicatieLinkbtn.TabIndex = 0;
-            this.Klanten_MedicatieLinkbtn.Text = "Link";
-            this.Klanten_MedicatieLinkbtn.UseVisualStyleBackColor = true;
-            this.Klanten_MedicatieLinkbtn.Click += new System.EventHandler(this.Klanten_MedicatieLinkbtn_Click);
-            // 
-            // KlantenMedicatieLinkGridview
-            // 
-            this.KlantenMedicatieLinkGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.KlantenMedicatieLinkGridview.Location = new System.Drawing.Point(6, 6);
-            this.KlantenMedicatieLinkGridview.Name = "KlantenMedicatieLinkGridview";
-            this.KlantenMedicatieLinkGridview.RowTemplate.Height = 24;
-            this.KlantenMedicatieLinkGridview.Size = new System.Drawing.Size(570, 307);
-            this.KlantenMedicatieLinkGridview.TabIndex = 1;
-            // 
-            // Klanten_MedicatieUnlinkbtn
-            // 
-            this.Klanten_MedicatieUnlinkbtn.Location = new System.Drawing.Point(468, 319);
-            this.Klanten_MedicatieUnlinkbtn.Name = "Klanten_MedicatieUnlinkbtn";
-            this.Klanten_MedicatieUnlinkbtn.Size = new System.Drawing.Size(75, 23);
-            this.Klanten_MedicatieUnlinkbtn.TabIndex = 2;
-            this.Klanten_MedicatieUnlinkbtn.Text = "Unlink";
-            this.Klanten_MedicatieUnlinkbtn.UseVisualStyleBackColor = true;
-            this.Klanten_MedicatieUnlinkbtn.Click += new System.EventHandler(this.button3_Click);
-            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.label15);
@@ -693,19 +686,14 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Create Link";
             // 
-            // KlantIDKlantenMedicatietxt
+            // label15
             // 
-            this.KlantIDKlantenMedicatietxt.Location = new System.Drawing.Point(121, 33);
-            this.KlantIDKlantenMedicatietxt.Name = "KlantIDKlantenMedicatietxt";
-            this.KlantIDKlantenMedicatietxt.Size = new System.Drawing.Size(138, 22);
-            this.KlantIDKlantenMedicatietxt.TabIndex = 1;
-            // 
-            // MedicatieIDKlantenMedicatietxt
-            // 
-            this.MedicatieIDKlantenMedicatietxt.Location = new System.Drawing.Point(121, 61);
-            this.MedicatieIDKlantenMedicatietxt.Name = "MedicatieIDKlantenMedicatietxt";
-            this.MedicatieIDKlantenMedicatietxt.Size = new System.Drawing.Size(138, 22);
-            this.MedicatieIDKlantenMedicatietxt.TabIndex = 2;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 61);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 17);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "MedicatieID";
             // 
             // label14
             // 
@@ -716,14 +704,48 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "KlantID";
             // 
-            // label15
+            // MedicatieIDKlantenMedicatietxt
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 61);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 17);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "MedicatieID";
+            this.MedicatieIDKlantenMedicatietxt.Location = new System.Drawing.Point(121, 61);
+            this.MedicatieIDKlantenMedicatietxt.Name = "MedicatieIDKlantenMedicatietxt";
+            this.MedicatieIDKlantenMedicatietxt.Size = new System.Drawing.Size(138, 22);
+            this.MedicatieIDKlantenMedicatietxt.TabIndex = 2;
+            // 
+            // KlantIDKlantenMedicatietxt
+            // 
+            this.KlantIDKlantenMedicatietxt.Location = new System.Drawing.Point(121, 33);
+            this.KlantIDKlantenMedicatietxt.Name = "KlantIDKlantenMedicatietxt";
+            this.KlantIDKlantenMedicatietxt.Size = new System.Drawing.Size(138, 22);
+            this.KlantIDKlantenMedicatietxt.TabIndex = 1;
+            // 
+            // Klanten_MedicatieLinkbtn
+            // 
+            this.Klanten_MedicatieLinkbtn.Location = new System.Drawing.Point(6, 96);
+            this.Klanten_MedicatieLinkbtn.Name = "Klanten_MedicatieLinkbtn";
+            this.Klanten_MedicatieLinkbtn.Size = new System.Drawing.Size(75, 23);
+            this.Klanten_MedicatieLinkbtn.TabIndex = 0;
+            this.Klanten_MedicatieLinkbtn.Text = "Link";
+            this.Klanten_MedicatieLinkbtn.UseVisualStyleBackColor = true;
+            this.Klanten_MedicatieLinkbtn.Click += new System.EventHandler(this.Klanten_MedicatieLinkbtn_Click);
+            // 
+            // Klanten_MedicatieUnlinkbtn
+            // 
+            this.Klanten_MedicatieUnlinkbtn.Location = new System.Drawing.Point(468, 319);
+            this.Klanten_MedicatieUnlinkbtn.Name = "Klanten_MedicatieUnlinkbtn";
+            this.Klanten_MedicatieUnlinkbtn.Size = new System.Drawing.Size(75, 23);
+            this.Klanten_MedicatieUnlinkbtn.TabIndex = 2;
+            this.Klanten_MedicatieUnlinkbtn.Text = "Unlink";
+            this.Klanten_MedicatieUnlinkbtn.UseVisualStyleBackColor = true;
+            this.Klanten_MedicatieUnlinkbtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // KlantenMedicatieLinkGridview
+            // 
+            this.KlantenMedicatieLinkGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.KlantenMedicatieLinkGridview.Location = new System.Drawing.Point(6, 6);
+            this.KlantenMedicatieLinkGridview.Name = "KlantenMedicatieLinkGridview";
+            this.KlantenMedicatieLinkGridview.RowTemplate.Height = 24;
+            this.KlantenMedicatieLinkGridview.Size = new System.Drawing.Size(570, 307);
+            this.KlantenMedicatieLinkGridview.TabIndex = 1;
             // 
             // Form1
             // 
@@ -753,6 +775,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ArtsenGridview)).EndInit();
             this.Klantentab.ResumeLayout(false);
             this.Klantentab.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -761,9 +784,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.KlantenGridView)).EndInit();
             this.MaakMedicatiebtn.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -800,7 +823,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage Klantentab;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ComboBox ArtsIDtxtklant;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox VoornaamtxtKlant;
         private System.Windows.Forms.Label label8;
@@ -828,6 +850,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox MedicatieIDKlantenMedicatietxt;
         private System.Windows.Forms.TextBox KlantIDKlantenMedicatietxt;
+        private System.Windows.Forms.TextBox ArtsIDtxtklant;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button Printbtn;
     }
 }
 

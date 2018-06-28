@@ -23,21 +23,8 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Build a list
-            var dataSource = new List<Combobox>();
-            dataSource.Add(new Combobox() { artsidcombo = "test" });
-            dataSource.Add(new Combobox() { artsnaamcombo = "test2"});
-
-            //Setup data binding
-            this.ArtsIDtxtklant.DataSource = dataSource;
-            this.ArtsIDtxtklant.DisplayMember = "test";
-            //this.ArtsIDtxtklant.ValueMember = "test2";
-
-            // make it readonly
-            this.ArtsIDtxtklant.DropDownStyle = ComboBoxStyle.DropDownList;
-
-
-            KlantenGridView.DataSource = con.klanten.Select(p => new {
+            KlantenGridView.DataSource = con.klanten.Select(p => new
+            {
                 KlantID = p.KlantID,
                 Voornaam = p.Voornaam,
                 Achternaam = p.Achternaam,
@@ -46,7 +33,8 @@ namespace WindowsFormsApp1
             }).OrderBy(p => p.Achternaam).ToList();
             //KlantenGridView.Columns["VerzekeringsID"].Visible = false;
 
-            ArtsenGridview.DataSource = con.arts.Select(p => new {
+            ArtsenGridview.DataSource = con.arts.Select(p => new
+            {
                 ArtsID = p.ArtsID,
                 Naam = p.Naam,
                 Adres = p.Adres,
@@ -54,14 +42,16 @@ namespace WindowsFormsApp1
             }).OrderBy(p => p.Naam).ToList();
             //ArtsenGridview.Columns["ArtsID"].Visible = false;
 
-            MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+            MedicatieGridView.DataSource = con.medicatie.Select(p => new
+            {
                 MedicatieID = p.MedicatieID,
                 MedicatieNaam = p.MedicatieNaam,
                 KlantID = p.KlantID,
             }).OrderBy(p => p.MedicatieNaam).ToList();
             //MedicatieGridView.Columns["MedicatieID"].Visible = false;
 
-            KlantenMedicatieLinkGridview.DataSource = con.KlantenMedicatie.Select(p => new {
+            KlantenMedicatieLinkGridview.DataSource = con.KlantenMedicatie.Select(p => new
+            {
                 MedicatieID = p.MedicatieID,
                 KlantID = p.KlantID
             }).OrderBy(p => p.KlantID).ToList();
@@ -103,7 +93,8 @@ namespace WindowsFormsApp1
             }
 
             con.SaveChanges();
-            KlantenGridView.DataSource = con.klanten.Select(p => new {
+            KlantenGridView.DataSource = con.klanten.Select(p => new
+            {
                 KlantID = p.KlantID,
                 Voornaam = p.Voornaam,
                 Achternaam = p.Achternaam,
@@ -175,7 +166,8 @@ namespace WindowsFormsApp1
 
             con.SaveChanges();
 
-            ArtsenGridview.DataSource = con.arts.Select(p => new {
+            ArtsenGridview.DataSource = con.arts.Select(p => new
+            {
                 ArtsID = p.ArtsID,
                 Naam = p.Naam,
                 Adres = p.Adres,
@@ -238,7 +230,8 @@ namespace WindowsFormsApp1
 
             con.SaveChanges();
 
-            MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+            MedicatieGridView.DataSource = con.medicatie.Select(p => new
+            {
                 MedicatieID = p.MedicatieID,
                 MedicatieNaam = p.MedicatieNaam,
                 KlantID = p.KlantID,
@@ -259,12 +252,14 @@ namespace WindowsFormsApp1
         {
             try
             {
+                int artsid = Convert.ToInt16(ArtsIDtxtklant.Text);
                 string voornaam = VoornaamtxtKlant.Text;
                 string achternaam = AchternaamtxtKlant.Text;
                 string plaats = PlaatstxtKlant.Text;
                 string adres = AdrestxtKlant.Text;
 
                 Klanten k = new Klanten();
+                k.ArtsID = artsid;
                 k.Voornaam = voornaam;
                 k.Achternaam = achternaam;
                 k.Plaats = plaats;
@@ -285,7 +280,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Something failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    
+
 
         private void SearchArtsen_TextChanged(object sender, EventArgs e)
         {
@@ -308,12 +303,13 @@ namespace WindowsFormsApp1
             k.Einddatum = einddatum;
             con.arts.Add(k);
             con.SaveChanges();
-            ArtsenGridview.DataSource = con.arts.Select(p => new {
+            ArtsenGridview.DataSource = con.arts.Select(p => new
+            {
                 ArtsID = p.ArtsID,
                 Naam = p.Naam,
                 Adres = p.Adres,
                 Einddatum = p.Einddatum
-              //  Achternaam = p.Einddatum,
+                //  Achternaam = p.Einddatum,
             }).OrderBy(p => p.Naam).ToList();
 
             //ArtsenGridview.Columns["Naam"].Visible = false;
@@ -331,7 +327,8 @@ namespace WindowsFormsApp1
                 k.KlantID = klantid;
                 con.medicatie.Add(k);
                 con.SaveChanges();
-                MedicatieGridView.DataSource = con.medicatie.Select(p => new {
+                MedicatieGridView.DataSource = con.medicatie.Select(p => new
+                {
                     MedicatieID = p.MedicatieID,
                     MedicatieNaam = p.MedicatieNaam,
                     KlantID = p.KlantID,
@@ -344,7 +341,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Geen geldig KlantID opgegeven", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void SearchMedicatie_TextChanged(object sender, EventArgs e)
@@ -369,9 +366,9 @@ namespace WindowsFormsApp1
         private void SelectAllKlantenbtn_Click(object sender, EventArgs e)
         {
             //deze moet nog een functie krijgen waarmee we alle resultaten kunnen tonen na het zoeken
-                        /*var query = from Klanten in con.klanten
-                        where Klanten.Voornaam.Contains(SrcKlantentxt.Text)
-                        select Klanten;*/
+            /*var query = from Klanten in con.klanten
+            where Klanten.Voornaam.Contains(SrcKlantentxt.Text)
+            select Klanten;*/
             //var query = Klanten.KlantID.SqlQuery("SELECT * FROM Klanten").ToList();
             SrcKlantentxt.Text = "";
             //KlantenGridView.DataSource = query.ToList();
@@ -383,7 +380,29 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //klant Verwijderen
+                int value = int.Parse(KlantenMedicatieLinkGridview.CurrentRow.Cells[0].Value.ToString());
 
+                KlantenMedicatie k = con.KlantenMedicatie.Find(value);
+
+                // Klant verwijderen en database opslaan
+
+                con.KlantenMedicatie.Remove(k);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Je hebt geen correct nummer ingevuld.", "System Failier",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.SaveChanges();
+            KlantenMedicatieLinkGridview.DataSource = con.KlantenMedicatie.Select(p => new
+            {
+                KlantID = p.KlantID,
+                MedicatieID = p.MedicatieID,
+            }).OrderBy(p => p.MedicatieID).ToList();
         }
 
         private void Klanten_MedicatieLinkbtn_Click(object sender, EventArgs e)
@@ -412,6 +431,11 @@ namespace WindowsFormsApp1
         }
 
         private void MedicatieGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Printbtn_Click(object sender, EventArgs e)
         {
 
         }
