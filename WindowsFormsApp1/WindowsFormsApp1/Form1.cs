@@ -60,6 +60,11 @@ namespace WindowsFormsApp1
                 KlantID = p.KlantID,
             }).OrderBy(p => p.MedicatieNaam).ToList();
             //MedicatieGridView.Columns["MedicatieID"].Visible = false;
+
+            KlantenMedicatieLinkGridview.DataSource = con.KlantenMedicatie.Select(p => new {
+                MedicatieID = p.MedicatieID,
+                KlantID = p.KlantID
+            }).OrderBy(p => p.KlantID).ToList();
         }
 
 
@@ -374,6 +379,41 @@ namespace WindowsFormsApp1
 
         private void ArtsIDtxtklant_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Klanten_MedicatieLinkbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int klantid = Convert.ToInt16(KlantIDKlantenMedicatietxt.Text);
+                int medicatieid = Convert.ToInt16(MedicatieIDKlantenMedicatietxt.Text);
+
+                KlantenMedicatie k = new KlantenMedicatie();
+                k.KlantID = klantid;
+                k.MedicatieID = medicatieid;
+                con.KlantenMedicatie.Add(k);
+                con.SaveChanges();
+                KlantenMedicatieLinkGridview.DataSource = con.KlantenMedicatie.Select(p => new
+                {
+                    KlantID = p.KlantID,
+                    MedicatieID = p.MedicatieID,
+                }).OrderBy(p => p.KlantID).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Something failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void MedicatieGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
