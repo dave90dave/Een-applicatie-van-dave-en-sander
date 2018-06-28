@@ -499,12 +499,9 @@ namespace WindowsFormsApp1
         {
             try
             {
-                //medicatie Verwijderen
                 int value = int.Parse(klanten_verzekeringgridview.CurrentRow.Cells[0].Value.ToString());
 
                 KlantenVerzekering k = con.klantenverzekering.Find(value);
-
-                // medicatie verwijderen en database opslaan
 
                 con.klantenverzekering.Remove(k);
             }
