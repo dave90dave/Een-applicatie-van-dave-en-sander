@@ -118,30 +118,6 @@ namespace WindowsFormsApp1
 
         private void MaakArts_Click(object sender, EventArgs e)
         {
-            /*
-            //Onderstaande velden moeten nog aangemaakt worden in de designer
-            string Naam = NaamtxtArts.Text;
-            string Adres = AdrestxtArts.Text;
-            string Postcode = PostcodetxtArts.Text;
-            DateTime Einddatum = EinddatumtxtArts.Text;
-
-
-
-            if (Naam != null && Adres != null && Postcode != null && Einddatum != null)
-            {
-                Arts a = new Arts();
-                a.Naam = Naam;
-                a.Adres = Adres;
-                a.Postcode = Postcode;
-                a.Einddatum = Einddatum;
-
-                con.klanten.Add(k);
-                con.SaveChanges();
-                ArtsGridView.DataSource = Arts.arts.ToList();
-
-                Naam = ""; Adres = ""; Postcode = ""; Einddatum = "";
-                k.Items.Add(Naam);
-            }*/
         }
 
 
@@ -519,6 +495,25 @@ namespace WindowsFormsApp1
                 VerzekeringNaam = p.VerzekeringNaam,
                 KlantID = p.KlantID,
             }).OrderBy(p => p.VerzekeringID).ToList();
+        }
+
+        private void ArtsenVerlengbtn_Click(object sender, EventArgs e)
+        {
+            int ID = int.Parse(ArtsenGridview.CurrentRow.Cells[0].Value.ToString());
+            var entity = con.arts.Find(ID);
+
+            entity.Einddatum = entity.Einddatum.AddYears(1);
+            con.SaveChanges();
+
+            ArtsenGridview.DataSource = con.arts.Select(p => new
+            {
+                ArtsID = p.ArtsID,
+                Naam = p.Naam,
+                Adres = p.Adres,
+                Einddatum = p.Einddatum,
+            }).OrderBy(p => p.Naam).ToList();
+            //ArtsenGridview.Columns["ArtsID"].Visible = false;
+
         }
     }
 }

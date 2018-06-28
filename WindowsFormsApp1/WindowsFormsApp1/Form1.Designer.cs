@@ -96,6 +96,8 @@
             this.Klanten_MedicatieLinkbtn = new System.Windows.Forms.Button();
             this.Klanten_MedicatieUnlinkbtn = new System.Windows.Forms.Button();
             this.KlantenMedicatieLinkGridview = new System.Windows.Forms.DataGridView();
+            this.ArtsenVerlengbtn = new System.Windows.Forms.Button();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.Medicatietab.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -119,6 +121,7 @@
             this.tabPage2.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).BeginInit();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -249,6 +252,7 @@
             // 
             // Artsentab
             // 
+            this.Artsentab.Controls.Add(this.groupBox13);
             this.Artsentab.Controls.Add(this.groupBox8);
             this.Artsentab.Controls.Add(this.groupBox5);
             this.Artsentab.Controls.Add(this.groupBox2);
@@ -816,6 +820,26 @@
             this.KlantenMedicatieLinkGridview.Size = new System.Drawing.Size(569, 267);
             this.KlantenMedicatieLinkGridview.TabIndex = 1;
             // 
+            // ArtsenVerlengbtn
+            // 
+            this.ArtsenVerlengbtn.Location = new System.Drawing.Point(17, 31);
+            this.ArtsenVerlengbtn.Name = "ArtsenVerlengbtn";
+            this.ArtsenVerlengbtn.Size = new System.Drawing.Size(90, 27);
+            this.ArtsenVerlengbtn.TabIndex = 54;
+            this.ArtsenVerlengbtn.Text = "Verlengen";
+            this.ArtsenVerlengbtn.UseVisualStyleBackColor = true;
+            this.ArtsenVerlengbtn.Click += new System.EventHandler(this.ArtsenVerlengbtn_Click);
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.ArtsenVerlengbtn);
+            this.groupBox13.Location = new System.Drawing.Point(381, 341);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(124, 82);
+            this.groupBox13.TabIndex = 56;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Verlengen";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -860,6 +884,7 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KlantenMedicatieLinkGridview)).EndInit();
+            this.groupBox13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -932,6 +957,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox KlantenIDVerzekeringtxt;
         private System.Windows.Forms.Label KlantIDlabel;
+        private System.Windows.Forms.Button ArtsenVerlengbtn;
+        private System.Windows.Forms.GroupBox groupBox13;
     }
 }
 
